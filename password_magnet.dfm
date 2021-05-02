@@ -43,9 +43,6 @@ object Form1: TForm1
     Width = 846
     Height = 41
     Panels = <>
-    ExplicitLeft = 208
-    ExplicitTop = 392
-    ExplicitWidth = 121
   end
   object Panel1: TPanel
     Left = 0
@@ -54,8 +51,6 @@ object Form1: TForm1
     Height = 403
     Align = alLeft
     TabOrder = 2
-    ExplicitTop = 49
-    ExplicitHeight = 400
   end
   object Panel2: TPanel
     Left = 140
@@ -64,10 +59,6 @@ object Form1: TForm1
     Height = 403
     Align = alClient
     TabOrder = 3
-    ExplicitLeft = 265
-    ExplicitTop = 99
-    ExplicitWidth = 709
-    ExplicitHeight = 400
     object Splitter2: TSplitter
       Left = 1
       Top = 185
@@ -84,7 +75,6 @@ object Form1: TForm1
       Height = 184
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 707
       object DBGrid1: TDBGrid
         Left = 1
         Top = 1
@@ -97,6 +87,11 @@ object Form1: TForm1
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            Visible = True
+          end>
       end
     end
   end
