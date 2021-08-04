@@ -6,7 +6,9 @@
 *.ils
 *.map
 *.tds
+*.cbproj.local
 /__astcache/**
+/helper/**
 /__history/**
 /__recovery/**
 /Win32/**
