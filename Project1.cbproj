@@ -133,11 +133,23 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="TGadjet.cpp">
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <None Include="TGadjet.h">
+            <BuildOrder>6</BuildOrder>
+        </None>
         <CppCompile Include="TPerson.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
         <None Include="TPerson.h">
             <BuildOrder>3</BuildOrder>
+        </None>
+        <CppCompile Include="TSite.cpp">
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <None Include="TSite.h">
+            <BuildOrder>8</BuildOrder>
         </None>
         <FormResources Include="password_magnet.dfm"/>
         <BuildConfiguration Include="Release">

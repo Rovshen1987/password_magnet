@@ -2,6 +2,7 @@
 #pragma once
 #include <vcl.h>
 #include "enumeration.h"
+#include <memory>
 
 class TPerson
 {
@@ -35,17 +36,23 @@ class TPerson
 		 AnsiString   get_Mobile_telephone();
 		 AnsiString   get_Mail();
 
+         AnsiString   GetPathName();
+
   protected:
-		 AnsiString            First_name;
-		 AnsiString            Last_name;
-		 TDate                 Year_of_birth;
-		 gender                Gender_of_person;
-		 AnsiString            Place_of_birth;
-		 AnsiString            Country;
-		 AnsiString            City;
-		 AnsiString			   Andress_registration;
-		 AnsiString            Place_of_resindece;
-		 AnsiString            Home_telephone;
-		 AnsiString            Mobile_telephone;
-		 AnsiString            Mail;
+
+		 std::unique_ptr<AnsiString>   First_name;
+		 std::unique_ptr<AnsiString>   Last_name;
+		 std::unique_ptr<TDate>        Year_of_birth;
+		 std::unique_ptr<gender>       Gender_of_person;
+		 std::unique_ptr<AnsiString>   Place_of_birth;
+		 std::unique_ptr<AnsiString>   Country;
+		 std::unique_ptr<AnsiString>   City;
+		 std::unique_ptr<AnsiString>   Andress_registration;
+		 std::unique_ptr<AnsiString>   Place_of_resindece;
+		 std::unique_ptr<AnsiString>   Home_telephone;
+		 std::unique_ptr<AnsiString>   Mobile_telephone;
+		 std::unique_ptr<AnsiString>   Mail;
+
+  private:
+		 const AnsiString      PathName = "TPerson";
 };
