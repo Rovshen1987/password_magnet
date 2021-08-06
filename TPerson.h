@@ -8,7 +8,12 @@ class TPerson
 {
   public:
 		  TPerson();
+		  TPerson(const TPerson& object) = delete;
+		  TPerson& operator=(const TPerson& object);
+
 		 ~TPerson();
+
+		 bool   operator==(const TPerson& object);
 
 		 void   set_First_name(const AnsiString& set);
 		 void   set_Last_name(const AnsiString& set);
@@ -21,7 +26,7 @@ class TPerson
 		 void   set_Place_of_resindece(const AnsiString& set);
 		 void   set_Home_telephone(const AnsiString& set);
 		 void   set_Mobile_telephone(const AnsiString& set);
-		 void   set_Mail(const AnsiString& set);
+
 
 		 AnsiString   get_First_name();
 		 AnsiString   get_Last_name();
@@ -34,7 +39,7 @@ class TPerson
 		 AnsiString   get_Place_of_resindece();
 		 AnsiString   get_Home_telephone();
 		 AnsiString   get_Mobile_telephone();
-		 AnsiString   get_Mail();
+
 
          AnsiString   GetPathName();
 
@@ -51,7 +56,7 @@ class TPerson
 		 std::unique_ptr<AnsiString>   Place_of_resindece;
 		 std::unique_ptr<AnsiString>   Home_telephone;
 		 std::unique_ptr<AnsiString>   Mobile_telephone;
-		 std::unique_ptr<AnsiString>   Mail;
+
 
   private:
 		 const AnsiString      PathName = "TPerson";

@@ -7,15 +7,15 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm1 *Form1;
+TPassword_magnet_F *Password_magnet_F;
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner)
+__fastcall TPassword_magnet_F::TPassword_magnet_F(TComponent* Owner)
 	: TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::EditCopy1Execute(TObject *Sender)
+void __fastcall TPassword_magnet_F::EditCopy1Execute(TObject *Sender)
 {
 ShowMessage("Close Windows");
 }

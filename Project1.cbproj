@@ -121,7 +121,7 @@
             <BuildOrder>5</BuildOrder>
         </None>
         <CppCompile Include="password_magnet.cpp">
-            <Form>Form1</Form>
+            <Form>Password_magnet_F</Form>
             <FormType>dfm</FormType>
             <DependentOn>password_magnet.h</DependentOn>
             <BuildOrder>2</BuildOrder>

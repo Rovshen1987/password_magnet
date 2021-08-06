@@ -1,7 +1,7 @@
-object Form1: TForm1
+object Password_magnet_F: TPassword_magnet_F
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Password_magnet_F'
   ClientHeight = 510
   ClientWidth = 829
   Color = clBtnFace
@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
@@ -37,7 +38,6 @@ object Form1: TForm1
     Height = 43
     Caption = 'ToolBar1'
     TabOrder = 0
-    ExplicitWidth = 846
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -45,8 +45,6 @@ object Form1: TForm1
     Width = 829
     Height = 41
     Panels = <>
-    ExplicitTop = 449
-    ExplicitWidth = 846
   end
   object Panel1: TPanel
     Left = 0
@@ -55,7 +53,6 @@ object Form1: TForm1
     Height = 423
     Align = alLeft
     TabOrder = 2
-    ExplicitHeight = 403
   end
   object Panel2: TPanel
     Left = 140
@@ -64,8 +61,6 @@ object Form1: TForm1
     Height = 423
     Align = alClient
     TabOrder = 3
-    ExplicitWidth = 706
-    ExplicitHeight = 403
     object Splitter2: TSplitter
       Left = 1
       Top = 185
@@ -82,7 +77,6 @@ object Form1: TForm1
       Height = 184
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 704
       object DBGrid1: TDBGrid
         Left = 1
         Top = 1

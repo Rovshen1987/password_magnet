@@ -18,7 +18,7 @@
 #include <Vcl.Menus.hpp>
 #include <Vcl.ToolWin.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TPassword_magnet_F : public TForm
 {
 __published:	// IDE-managed Components
 	TMainMenu *MainMenu1;
@@ -38,9 +38,9 @@ __published:	// IDE-managed Components
 	void __fastcall EditCopy1Execute(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+	__fastcall TPassword_magnet_F(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TPassword_magnet_F *Password_magnet_F;
 //---------------------------------------------------------------------------
 #endif
