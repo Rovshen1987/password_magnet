@@ -17,6 +17,9 @@
 #include <Vcl.Grids.hpp>
 #include <Vcl.Menus.hpp>
 #include <Vcl.ToolWin.hpp>
+#include "direct_r.h"
+#include <Data.Win.ADODB.hpp>
+#include <Vcl.DBCtrls.hpp>
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
 {
@@ -35,7 +38,15 @@ __published:	// IDE-managed Components
 	TSplitter *Splitter2;
 	TDBGrid *DBGrid1;
 	TSplitter *Splitter3;
+	TADOConnection *ADOConnection1;
+	TADOQuery *ADOQuery1;
+	TDataSource *DataSource1;
+	TDBNavigator *DBNavigator1;
+	TButton *Button1;
+	TButton *Button2;
 	void __fastcall EditCopy1Execute(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);

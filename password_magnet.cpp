@@ -21,3 +21,20 @@ ShowMessage("Close Windows");
 }
 //---------------------------------------------------------------------------
 
+
+
+void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
+{
+
+Password_magnet_F->Caption = DBGrid1->Columns->Count;
+
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
+{
+//DBGrid1->Columns->Delete(1);
+}
+//---------------------------------------------------------------------------
+
