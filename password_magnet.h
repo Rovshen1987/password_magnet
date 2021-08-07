@@ -28,8 +28,8 @@ class TPassword_magnet_F : public TForm
 {
 __published:	// IDE-managed Components
 	TMainMenu *MainMenu1;
-	TToolBar *ToolBar1;
-	TStatusBar *StatusBar1;
+	TToolBar *ToolBar;
+	TStatusBar *StatusBar;
 	TMenuItem *File1;
 	TMenuItem *Open1;
 	TMenuItem *N1;
@@ -44,11 +44,11 @@ __published:	// IDE-managed Components
 	TADOConnection *ADOConnection;
 	TADOQuery *ADOQuery;
 	TDataSource *DataSource;
-	TDBNavigator *DBNavigator1;
-	TLabel *Sait_L;
+	TDBNavigator *DBNavigator;
+	TLabel *Site_L;
 	TLabel *Mobile_L;
 	TLabel *Computer_L;
-	TPanel *Person_P;
+	TPanel *Date_navigator_P;
 	TPanel *Gadjet_P;
 	TLabel *ID_L;
 	TLabel *Login_L;
@@ -60,9 +60,8 @@ __published:	// IDE-managed Components
 	TDBEdit *Password_DBE;
 	TDBEdit *Mail_DBE;
 	TDBEdit *Registration_date_DBE;
-	TPanel *Site_P;
+	TPanel *Person_P;
 	TSplitter *Splitter4;
-	TSplitter *Splitter5;
 	TLabel *First_name_L;
 	TLabel *Last_name_L;
 	TLabel *Year_of_birth_L;
@@ -94,18 +93,22 @@ __published:	// IDE-managed Components
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
-	void __fastcall Sait_LClick(TObject *Sender);
+	void __fastcall Site_LClick(TObject *Sender);
 	void __fastcall Mobile_LClick(TObject *Sender);
 	void __fastcall ICloud_LClick(TObject *Sender);
 	void __fastcall PlayMarker_LClick(TObject *Sender);
 	void __fastcall Computer_LClick(TObject *Sender);
 	void __fastcall Pay_card_LClick(TObject *Sender);
+	void __fastcall FormResize(TObject *Sender);
+	void __fastcall Exit1Click(TObject *Sender);
 private:	// User declarations
 	void initilisation();
+    void Password_magnet_F_RESIZE();
 public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);
 
-    std::unique_ptr<Navigator> password_magnet_navigator;
+	std::unique_ptr<Navigator> password_magnet_navigator;
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TPassword_magnet_F *Password_magnet_F;

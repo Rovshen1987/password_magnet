@@ -14,6 +14,7 @@ object Password_magnet_F: TPassword_magnet_F
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCreate = FormCreate
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 21
   object Splitter1: TSplitter
@@ -32,15 +33,15 @@ object Password_magnet_F: TPassword_magnet_F
     Align = alTop
     ExplicitWidth = 846
   end
-  object ToolBar1: TToolBar
+  object ToolBar: TToolBar
     Left = 0
     Top = 0
     Width = 1071
     Height = 43
-    Caption = 'ToolBar1'
+    Caption = 'ToolBar'
     TabOrder = 0
   end
-  object StatusBar1: TStatusBar
+  object StatusBar: TStatusBar
     Left = 0
     Top = 924
     Width = 1071
@@ -54,7 +55,7 @@ object Password_magnet_F: TPassword_magnet_F
     Height = 878
     Align = alLeft
     TabOrder = 2
-    object Sait_L: TLabel
+    object Site_L: TLabel
       Left = 15
       Top = 15
       Width = 39
@@ -67,7 +68,7 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = Sait_LClick
+      OnClick = Site_LClick
     end
     object Mobile_L: TLabel
       Left = 15
@@ -202,7 +203,7 @@ object Password_magnet_F: TPassword_magnet_F
           end>
       end
     end
-    object DBNavigator1: TDBNavigator
+    object DBNavigator: TDBNavigator
       Left = 1
       Top = 188
       Width = 929
@@ -212,33 +213,30 @@ object Password_magnet_F: TPassword_magnet_F
       Align = alTop
       TabOrder = 1
     end
-    object Person_P: TPanel
+    object Date_navigator_P: TPanel
       Left = 1
       Top = 233
       Width = 929
-      Height = 536
-      Align = alTop
+      Height = 644
+      Align = alClient
       TabOrder = 2
+      ExplicitHeight = 536
       object Splitter4: TSplitter
         Left = 421
         Top = 1
-        Width = 2
-        Height = 534
-        ExplicitHeight = 261
-      end
-      object Splitter5: TSplitter
-        Left = 423
-        Top = 1
         Width = 0
-        Height = 534
+        Height = 642
+        ExplicitHeight = 534
       end
       object Gadjet_P: TPanel
         Left = 1
         Top = 1
         Width = 420
-        Height = 534
+        Height = 642
         Align = alLeft
         TabOrder = 0
+        ExplicitTop = 6
+        ExplicitHeight = 534
         object ID_L: TLabel
           Left = 20
           Top = 20
@@ -310,13 +308,15 @@ object Password_magnet_F: TPassword_magnet_F
           TabOrder = 4
         end
       end
-      object Site_P: TPanel
-        Left = 423
+      object Person_P: TPanel
+        Left = 421
         Top = 1
         Width = 468
-        Height = 534
+        Height = 642
         Align = alLeft
         TabOrder = 1
+        ExplicitLeft = 423
+        ExplicitHeight = 534
         object First_name_L: TLabel
           Left = 20
           Top = 20
@@ -506,6 +506,7 @@ object Password_magnet_F: TPassword_magnet_F
       end
       object Exit1: TMenuItem
         Caption = 'Exit'
+        OnClick = Exit1Click
       end
     end
   end

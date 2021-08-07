@@ -7,7 +7,7 @@ public:
 	 Navigator();
 	~Navigator();
 
-     void set_Sait_L(TLabel* object);
+	 void set_Site_L(TLabel* object);
 	 void set_Mobile_L(TLabel* object);
 	 void set_ICloud_L(TLabel* object);
 	 void set_PlayMarker_L(TLabel* object);
@@ -16,7 +16,7 @@ public:
 
 	 void object_click(const AnsiString& name_object);
 
-	 bool get_Sait_BOOL();
+	 bool get_Site_BOOL();
 	 bool get_Mobile_BOOL();
 	 bool get_ICloud_BOOL();
 	 bool get_PlayMarker_BOOL();
@@ -25,7 +25,7 @@ public:
 
 
 private:
-	 TLabel* Sait_L;
+	 TLabel* Site_L;
 	 TLabel* Mobile_L;
 	 TLabel* ICloud_L;
 	 TLabel* PlayMarker_L;
@@ -35,7 +35,7 @@ private:
 	 const int true_varrible_int      = 18;
 	 const int false_varrible_int     = 14;
 
-	 bool Sait_BOOL;
+	 bool Site_BOOL;
 	 bool Mobile_BOOL;
 	 bool ICloud_BOOL;
 	 bool PlayMarker_BOOL;
@@ -45,7 +45,7 @@ private:
 	 int  ged_id_object(const AnsiString& name_object) noexcept;
 	 void ged_id_object_inside(const int& set);
 
-	 void Sait_BUTTON();
+	 void Site_BUTTON();
 	 void Mobile_BUTTON();
 	 void ICloud_BUTTON();
 	 void PlayMarker_BUTTON();

@@ -45,12 +45,14 @@ this->PlayMarker_L->Font->Style = this->PlayMarker_L->Font->Style<<fsUnderline;
  void TPassword_magnet_F::initilisation()
  {
    this->password_magnet_navigator = std::make_unique<Navigator>();
-   this->password_magnet_navigator->set_Sait_L(this->Sait_L);
+   this->password_magnet_navigator->set_Site_L(this->Site_L);
    this->password_magnet_navigator->set_Mobile_L(this->Mobile_L);
    this->password_magnet_navigator->set_ICloud_L(this->ICloud_L);
    this->password_magnet_navigator->set_PlayMarker_L(this->PlayMarker_L);
    this->password_magnet_navigator->set_Computer_L(this->Computer_L);
    this->password_magnet_navigator->set_Pay_card_L(this->Pay_card_L);
+
+   this->password_magnet_navigator->object_click(this->Site_L->GetNamePath());
  };
 
  /*	 TLabel* Mobile_L;
@@ -64,9 +66,9 @@ this->initilisation();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::Sait_LClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::Site_LClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->Sait_L->GetNamePath());
+this->password_magnet_navigator->object_click(this->Site_L->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
@@ -100,4 +102,38 @@ this->password_magnet_navigator->object_click(this->Pay_card_L->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
+void TPassword_magnet_F::Password_magnet_F_RESIZE()
+{
+  int Form_width      = Password_magnet_F->Width;
+  int Navigator_width = this->Navigator_P->Width;
+  int result          = 0;
+
+  result = Form_width - Navigator_width;
+  this->Date_navigator_P->Width = result;
+
+
+  result = result / 2;
+  this->Gadjet_P->Width = result;
+  this->Person_P->Width = result;
+
+  int Form_height = (Password_magnet_F->Height - (this->ToolBar->Height + this->DBGrid_P->Height
+					 + this->DBNavigator->Width + this->StatusBar->Height));
+
+ // this->Date_navigator_P->Height = Form_height;
+  this->Gadjet_P->Height         = Form_height;
+  this->Person_P->Height         = Form_height;
+};
+
+
+void __fastcall TPassword_magnet_F::FormResize(TObject *Sender)
+{
+Password_magnet_F_RESIZE();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPassword_magnet_F::Exit1Click(TObject *Sender)
+{
+Password_magnet_F->Close();
+}
+//---------------------------------------------------------------------------
 

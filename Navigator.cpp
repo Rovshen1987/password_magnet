@@ -3,7 +3,7 @@
 //-------------------Constructor-----------------------------------------------
  Navigator::Navigator()
  {
-   this->Sait_BOOL       = true;
+   this->Site_BOOL       = true;
    this->Mobile_BOOL     = false;
    this->ICloud_BOOL     = false;
    this->PlayMarker_BOOL = false;
@@ -15,14 +15,14 @@
  Navigator::~Navigator()
  {
 
-	 this->Sait_L       = 0;
+	 this->Site_L       = 0;
 	 this->Mobile_L     = 0;
 	 this->ICloud_L     = 0;
 	 this->PlayMarker_L = 0;
 	 this->Computer_L   = 0;
 	 this->Pay_card_L     = 0;
 
-	 delete this->Sait_L;
+	 delete this->Site_L;
 	 delete this->Mobile_L;
 	 delete this->ICloud_L;
 	 delete this->PlayMarker_L;
@@ -33,9 +33,9 @@
 
  //---------------------------PUBLIC SECTION------------------------------------
  /////////////////////////////   SET    ////////////////////////////////////////
- void Navigator::set_Sait_L(TLabel* object)
+ void Navigator::set_Site_L(TLabel* object)
  {
-	this->Sait_L = object;
+	this->Site_L = object;
  };
 
  //-----------------------------------------------------------------------------
@@ -77,9 +77,9 @@
 
  //-----------------------------------------------------------------------------
  /////////////////////////////   GET    ////////////////////////////////////////
- bool Navigator::get_Sait_BOOL()
+ bool Navigator::get_Site_BOOL()
  {
-	return this->Sait_BOOL;
+	return this->Site_BOOL;
  };
 
  //-----------------------------------------------------------------------------
@@ -120,7 +120,7 @@
    int result = 0;
 
    result++; //1
-   if (name_object == "Sait_L")
+   if (name_object == "Site_L")
    {
 	return result;
    };
@@ -164,7 +164,7 @@
    switch(set)
  {
   case 1: {
-		   this->Sait_BUTTON();
+		   this->Site_BUTTON();
 		   break;
 		  };
 
@@ -201,10 +201,10 @@
  };
 
 //------------------------------------------------------------------------------
- void Navigator::Sait_BUTTON()
+ void Navigator::Site_BUTTON()
  {
   this->All_varrible_false();
-  this->Sait_BOOL = true;
+  this->Site_BOOL = true;
   this->set_style_ALL();
  };
 
@@ -251,7 +251,7 @@
 //------------------------------------------------------------------------------
 void Navigator::All_varrible_false()
  {
-	 this->Sait_BOOL        = false;
+	 this->Site_BOOL        = false;
 	 this->Mobile_BOOL      = false;
 	 this->ICloud_BOOL      = false;
 	 this->PlayMarker_BOOL  = false;
@@ -263,15 +263,15 @@ void Navigator::All_varrible_false()
 //------------------------------------------------------------------------------
 void Navigator::set_style_ALL()
 {
-  if (this->Sait_BOOL == true)
+  if (this->Site_BOOL == true)
   {
-   this->Sait_L->Font->Size  = this->true_varrible_int;
-   this->Sait_L->Font->Style = this->Sait_L->Font->Style<<fsUnderline;
+   this->Site_L->Font->Size  = this->true_varrible_int;
+   this->Site_L->Font->Style = this->Site_L->Font->Style<<fsUnderline;
   }
   else
   {
-   this->Sait_L->Font->Size = this->false_varrible_int;
-   this->Sait_L->Font->Style = this->Sait_L->Font->Style>>fsUnderline;
+   this->Site_L->Font->Size = this->false_varrible_int;
+   this->Site_L->Font->Style = this->Site_L->Font->Style>>fsUnderline;
   };
 
   if (this->Mobile_BOOL == true)
