@@ -35,6 +35,12 @@ Password_magnet_F->Caption = DBGrid1->Columns->Count;
 void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
 {
 //DBGrid1->Columns->Delete(1);
+//
+//Button2->
+Password_magnet_F->Caption = this->Sait_L->GetNamePath();
+
 }
 //---------------------------------------------------------------------------
+
+
 

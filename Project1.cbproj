@@ -132,6 +132,12 @@
         <None Include="enumeration.h">
             <BuildOrder>5</BuildOrder>
         </None>
+        <CppCompile Include="Navigator.cpp">
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <None Include="Navigator.h">
+            <BuildOrder>14</BuildOrder>
+        </None>
         <CppCompile Include="password_magnet.cpp">
             <Form>Password_magnet_F</Form>
             <FormType>dfm</FormType>

@@ -44,5 +44,5 @@ void Add_columns_r::clear_item()
   for (int i = count; i > 0; i--)
   {
    this->Grid->Columns->Delete((count-1));
-  }
+  };
 };

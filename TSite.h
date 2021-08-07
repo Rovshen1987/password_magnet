@@ -1,20 +1,35 @@
 #pragma once
 #include "TPerson.h"
-#include "TGajet.h"
+#include "TGadjet.h"
+#include <Data.Win.ADODB.hpp>
+#include <Vcl.DBGrids.hpp>
 
-class TSite:: public TGadjet, public TPerson
+
+
+class TSite: public TGadjet, public TPerson
 {
   public:
-		  TSite();
-		 ~TSite();
+		 TSite() = delete;
+		 TSite(TForm* object);
+		~TSite();
 
-		 AnsiString get_path_name();
-		 void       set_host(const AnsiString& set);
-		 AnsiString get_host();
+		 void set_ADO_query_o(TADOQuery* object);
+		 void set_DB_grid_o(TDBGrid* object);
+		 void set_Host(const AnsiString& set);
+
+		 AnsiString  get_path_name();
+
+		 AnsiString  get_Host();
 
  protected:
-		 AnsiString Host;
+		 AnsiString   Host;
+		 TADOQuery*   ADO_query_o;
+		 TDBGrid*     DB_grid_o;
 
  private:
 		const AnsiString Path_name = "TSite";
+
+
+
+
 };

@@ -14,6 +14,11 @@ this->Registration_date = std::make_unique<TDate>(Registration_date);
 // this->Login = std::move(object.Login);
 //};
 
+TGadjet::TGadjet()
+{
+
+};
+
 TGadjet& TGadjet::operator=(TGadjet& object)
 {
   if (*this == object)

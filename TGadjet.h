@@ -7,6 +7,7 @@ class TGadjet
 public:
 
 	 TGadjet(const AnsiString& Login, const AnsiString& Password, const AnsiString mail, const TDate Registration_date);
+     TGadjet();
 //	 TGadjet(const AnsiString& Login, const AnsiString& Password, const TDate& Registration_date)
 //			:Login(Login), Password(Password), Registration_date(Registration_date){};
 	 TGadjet(const TGadjet& object) = delete;
