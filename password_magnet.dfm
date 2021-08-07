@@ -13,6 +13,7 @@ object Password_magnet_F: TPassword_magnet_F
   Menu = MainMenu1
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 21
   object Splitter1: TSplitter
@@ -54,8 +55,8 @@ object Password_magnet_F: TPassword_magnet_F
     Align = alLeft
     TabOrder = 2
     object Sait_L: TLabel
-      Left = 32
-      Top = 6
+      Left = 15
+      Top = 15
       Width = 39
       Height = 21
       Cursor = crHandPoint
@@ -66,69 +67,82 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
+      OnClick = Sait_LClick
     end
     object Mobile_L: TLabel
-      Left = 32
-      Top = 33
-      Width = 73
+      Left = 15
+      Top = 50
+      Width = 52
       Height = 21
       Cursor = crHandPoint
-      Caption = 'Mobile_L'
+      Caption = 'Mobile'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
       Font.Height = -19
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
+      OnClick = Mobile_LClick
     end
     object Computer_L: TLabel
-      Left = 32
-      Top = 115
-      Width = 96
+      Left = 15
+      Top = 155
+      Width = 75
       Height = 21
       Cursor = crHandPoint
-      Caption = 'Computer_L'
+      Caption = 'Computer'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
       Font.Height = -19
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
+      OnClick = Computer_LClick
     end
     object ICloud_L: TLabel
-      Left = 32
-      Top = 60
-      Width = 73
+      Left = 15
+      Top = 85
+      Width = 52
       Height = 21
       Cursor = crHandPoint
-      Caption = 'ICloud_L'
+      Caption = 'ICloud'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
       Font.Height = -19
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
+      OnClick = ICloud_LClick
     end
     object PlayMarker_L: TLabel
-      Left = 32
-      Top = 88
-      Width = 106
+      Left = 15
+      Top = 120
+      Width = 85
       Height = 21
       Cursor = crHandPoint
-      Caption = 'PlayMarker_L'
+      Caption = 'PlayMarker'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
       Font.Height = -19
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
+      OnClick = PlayMarker_LClick
     end
     object Pay_card_L: TLabel
-      Left = 32
-      Top = 142
-      Width = 92
+      Left = 15
+      Top = 190
+      Width = 61
       Height = 21
-      Caption = 'Pay_card_L'
+      Cursor = crHandPoint
+      Caption = 'Paycard'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clHighlight
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+      OnClick = Pay_card_LClick
     end
   end
   object Client_P: TPanel

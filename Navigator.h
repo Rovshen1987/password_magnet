@@ -32,6 +32,9 @@ private:
 	 TLabel* Computer_L;
 	 TLabel* Pay_card_L;
 
+	 const int true_varrible_int      = 18;
+	 const int false_varrible_int     = 14;
+
 	 bool Sait_BOOL;
 	 bool Mobile_BOOL;
 	 bool ICloud_BOOL;
@@ -39,8 +42,8 @@ private:
 	 bool Computer_BOOL;
 	 bool Pay_card_BOOL;
 
-	 int  ged_id_object(const AnsiString& name_object);
-	 void ged_id_object_inside();
+	 int  ged_id_object(const AnsiString& name_object) noexcept;
+	 void ged_id_object_inside(const int& set);
 
 	 void Sait_BUTTON();
 	 void Mobile_BUTTON();
@@ -48,6 +51,10 @@ private:
 	 void PlayMarker_BUTTON();
 	 void Computer_BUTTON();
 	 void Pay_card_BUTTON();
+
+	 void All_varrible_false();
+
+	 void set_style_ALL();
 
 
 };

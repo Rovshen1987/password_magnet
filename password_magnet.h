@@ -22,6 +22,7 @@
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.Mask.hpp>
 #include "Navigator.h"
+#include <memory>
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
 {
@@ -92,9 +93,19 @@ __published:	// IDE-managed Components
 	void __fastcall EditCopy1Execute(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall Sait_LClick(TObject *Sender);
+	void __fastcall Mobile_LClick(TObject *Sender);
+	void __fastcall ICloud_LClick(TObject *Sender);
+	void __fastcall PlayMarker_LClick(TObject *Sender);
+	void __fastcall Computer_LClick(TObject *Sender);
+	void __fastcall Pay_card_LClick(TObject *Sender);
 private:	// User declarations
+	void initilisation();
 public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);
+
+    std::unique_ptr<Navigator> password_magnet_navigator;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TPassword_magnet_F *Password_magnet_F;
