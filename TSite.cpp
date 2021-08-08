@@ -5,7 +5,7 @@
 //
 // };
 
- TSite::TSite(TForm* object)
+ TSite::TSite()
  {
 //  this->ADO_query_o = ADO_query_o;
 //  this->DB_grid_o   = DB_grid_o;

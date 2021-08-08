@@ -3,8 +3,10 @@ object Password_magnet_F: TPassword_magnet_F
   Top = 0
   Caption = 'Password_magnet_F'
   ClientHeight = 965
-  ClientWidth = 1071
+  ClientWidth = 1074
   Color = clBtnFace
+  Constraints.MinHeight = 790
+  Constraints.MinWidth = 1040
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -19
@@ -27,7 +29,7 @@ object Password_magnet_F: TPassword_magnet_F
   object Splitter3: TSplitter
     Left = 0
     Top = 43
-    Width = 1071
+    Width = 1074
     Height = 3
     Cursor = crVSplit
     Align = alTop
@@ -36,17 +38,19 @@ object Password_magnet_F: TPassword_magnet_F
   object ToolBar: TToolBar
     Left = 0
     Top = 0
-    Width = 1071
+    Width = 1074
     Height = 43
     Caption = 'ToolBar'
     TabOrder = 0
+    ExplicitWidth = 1071
   end
   object StatusBar: TStatusBar
     Left = 0
     Top = 924
-    Width = 1071
+    Width = 1074
     Height = 41
     Panels = <>
+    ExplicitWidth = 1071
   end
   object Navigator_P: TPanel
     Left = 0
@@ -58,10 +62,10 @@ object Password_magnet_F: TPassword_magnet_F
     object Site_L: TLabel
       Left = 15
       Top = 15
-      Width = 39
+      Width = 28
       Height = 21
       Cursor = crHandPoint
-      Caption = #1057#1072#1081#1090
+      Caption = 'Site'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
       Font.Height = -19
@@ -149,14 +153,15 @@ object Password_magnet_F: TPassword_magnet_F
   object Client_P: TPanel
     Left = 140
     Top = 46
-    Width = 931
+    Width = 934
     Height = 878
     Align = alClient
     TabOrder = 3
+    ExplicitWidth = 931
     object Splitter2: TSplitter
       Left = 1
       Top = 185
-      Width = 929
+      Width = 932
       Height = 3
       Cursor = crVSplit
       Align = alTop
@@ -165,14 +170,15 @@ object Password_magnet_F: TPassword_magnet_F
     object DBGrid_P: TPanel
       Left = 1
       Top = 1
-      Width = 929
+      Width = 932
       Height = 184
       Align = alTop
       TabOrder = 0
+      ExplicitWidth = 929
       object DBGrid1: TDBGrid
         Left = 1
         Top = 1
-        Width = 927
+        Width = 930
         Height = 182
         Align = alClient
         DataSource = DataSource
@@ -206,71 +212,71 @@ object Password_magnet_F: TPassword_magnet_F
     object DBNavigator: TDBNavigator
       Left = 1
       Top = 188
-      Width = 929
+      Width = 932
       Height = 45
       Cursor = crHandPoint
       DataSource = DataSource
       Align = alTop
       TabOrder = 1
+      ExplicitWidth = 929
     end
     object Date_navigator_P: TPanel
       Left = 1
       Top = 233
-      Width = 929
+      Width = 932
       Height = 644
       Align = alClient
       TabOrder = 2
-      ExplicitHeight = 536
+      ExplicitWidth = 929
       object Splitter4: TSplitter
-        Left = 421
+        Left = 409
         Top = 1
         Width = 0
         Height = 642
+        ExplicitLeft = 421
         ExplicitHeight = 534
       end
       object Gadjet_P: TPanel
         Left = 1
         Top = 1
-        Width = 420
+        Width = 408
         Height = 642
         Align = alLeft
         TabOrder = 0
-        ExplicitTop = 6
-        ExplicitHeight = 534
         object ID_L: TLabel
-          Left = 20
+          Left = 15
           Top = 20
-          Width = 19
+          Width = 33
           Height = 21
-          Caption = 'ID'
+          Caption = '* ID'
         end
         object Login_L: TLabel
-          Left = 20
+          Left = 15
           Top = 55
-          Width = 43
+          Width = 57
           Height = 21
-          Caption = 'Login'
+          Caption = '* Login'
         end
         object Password_L: TLabel
-          Left = 20
+          Left = 15
           Top = 90
-          Width = 74
+          Width = 88
           Height = 21
-          Caption = 'Password'
+          Caption = '* Password'
         end
         object Mail_L: TLabel
-          Left = 20
+          Left = 15
           Top = 125
-          Width = 32
+          Width = 46
           Height = 21
-          Caption = 'Mail'
+          Caption = '* Mail'
         end
         object Registration_date_L: TLabel
-          Left = 20
+          Left = 15
           Top = 155
-          Width = 125
+          Width = 139
           Height = 21
-          Caption = 'Registration date'
+          Caption = '* Registration date'
         end
         object ID_DBE: TDBEdit
           Left = 176
@@ -309,91 +315,90 @@ object Password_magnet_F: TPassword_magnet_F
         end
       end
       object Person_P: TPanel
-        Left = 421
+        Left = 409
         Top = 1
         Width = 468
         Height = 642
         Align = alLeft
         TabOrder = 1
-        ExplicitLeft = 423
-        ExplicitHeight = 534
+        ExplicitLeft = 421
         object First_name_L: TLabel
           Left = 20
           Top = 20
-          Width = 104
+          Width = 73
           Height = 21
-          Caption = 'First_name_L'
+          Caption = 'Firstname'
         end
         object Last_name_L: TLabel
           Left = 20
           Top = 55
-          Width = 102
+          Width = 71
           Height = 21
           Cursor = crHandPoint
-          Caption = 'Last_name_L'
+          Caption = 'Lastname'
         end
         object Year_of_birth_L: TLabel
           Left = 20
           Top = 90
-          Width = 124
+          Width = 93
           Height = 21
-          Caption = 'Year_of_birth_L'
+          Caption = 'Year of birth'
         end
         object Gender_of_person_L: TLabel
           Left = 20
           Top = 125
-          Width = 163
+          Width = 132
           Height = 21
-          Caption = 'Gender_of_person_L'
+          Caption = 'Gender of person'
         end
         object Place_of_birth_L: TLabel
           Left = 20
           Top = 160
-          Width = 131
+          Width = 100
           Height = 21
-          Caption = 'Place_of_birth_L'
+          Caption = 'Place of birth'
         end
         object Country_L: TLabel
           Left = 20
           Top = 195
-          Width = 82
+          Width = 61
           Height = 21
-          Caption = 'Country_L'
+          Caption = 'Country'
         end
         object City_L: TLabel
           Left = 20
           Top = 230
-          Width = 52
+          Width = 31
           Height = 21
-          Caption = 'City_L'
+          Caption = 'City'
         end
         object Andress_registration_L: TLabel
           Left = 20
           Top = 265
-          Width = 175
+          Width = 149
           Height = 21
-          Caption = 'Andress_registration_L'
+          Caption = 'Andress registration'
         end
         object Place_of_resindece_L: TLabel
           Left = 20
           Top = 300
-          Width = 167
+          Width = 136
           Height = 21
-          Caption = 'Place_of_resindece_L'
+          Caption = 'Place of resindece'
         end
         object Home_telephone_L: TLabel
           Left = 20
           Top = 335
-          Width = 147
+          Width = 121
           Height = 21
-          Caption = 'Home_telephone_L'
+          Caption = 'Home telephone'
         end
         object Mobile_telephone_L: TLabel
           Left = 20
           Top = 370
-          Width = 154
+          Width = 128
           Height = 21
-          Caption = 'Mobile_telephone_L'
+          Caption = 'Mobile telephone'
         end
         object First_name_DBE: TDBEdit
           Left = 220

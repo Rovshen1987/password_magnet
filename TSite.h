@@ -9,8 +9,8 @@
 class TSite: public TGadjet, public TPerson
 {
   public:
-		 TSite() = delete;
-		 TSite(TForm* object);
+//		 TSite() = delete;
+		 TSite();
 		~TSite();
 
 		 void set_ADO_query_o(TADOQuery* object);

@@ -109,6 +109,13 @@ public:		// User declarations
 
 	std::unique_ptr<Navigator> password_magnet_navigator;
 
+	void Site_L_initilisation();
+	void Mobile_L_initilisation();
+	void ICloud_L_initilisation();
+	void PlyMarker_L_initilisation();
+	void Computer_L_initilisation();
+	void Paycard_initilisation();
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TPassword_magnet_F *Password_magnet_F;
