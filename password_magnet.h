@@ -89,6 +89,8 @@ __published:	// IDE-managed Components
 	TLabel *Pay_card_L;
 	TButton *Button1;
 	TButton *Button2;
+	TLabel *Host_L;
+	TDBEdit *Host_DBE;
 	void __fastcall EditCopy1Execute(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);

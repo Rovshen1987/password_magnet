@@ -42,7 +42,6 @@ object Password_magnet_F: TPassword_magnet_F
     Height = 43
     Caption = 'ToolBar'
     TabOrder = 0
-    ExplicitWidth = 1071
   end
   object StatusBar: TStatusBar
     Left = 0
@@ -50,7 +49,6 @@ object Password_magnet_F: TPassword_magnet_F
     Width = 1074
     Height = 41
     Panels = <>
-    ExplicitWidth = 1071
   end
   object Navigator_P: TPanel
     Left = 0
@@ -157,7 +155,6 @@ object Password_magnet_F: TPassword_magnet_F
     Height = 878
     Align = alClient
     TabOrder = 3
-    ExplicitWidth = 931
     object Splitter2: TSplitter
       Left = 1
       Top = 185
@@ -174,7 +171,6 @@ object Password_magnet_F: TPassword_magnet_F
       Height = 184
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 929
       object DBGrid1: TDBGrid
         Left = 1
         Top = 1
@@ -218,7 +214,6 @@ object Password_magnet_F: TPassword_magnet_F
       DataSource = DataSource
       Align = alTop
       TabOrder = 1
-      ExplicitWidth = 929
     end
     object Date_navigator_P: TPanel
       Left = 1
@@ -227,7 +222,6 @@ object Password_magnet_F: TPassword_magnet_F
       Height = 644
       Align = alClient
       TabOrder = 2
-      ExplicitWidth = 929
       object Splitter4: TSplitter
         Left = 409
         Top = 1
@@ -252,31 +246,38 @@ object Password_magnet_F: TPassword_magnet_F
         end
         object Login_L: TLabel
           Left = 15
-          Top = 55
+          Top = 90
           Width = 57
           Height = 21
           Caption = '* Login'
         end
         object Password_L: TLabel
           Left = 15
-          Top = 90
+          Top = 125
           Width = 88
           Height = 21
           Caption = '* Password'
         end
         object Mail_L: TLabel
           Left = 15
-          Top = 125
+          Top = 160
           Width = 46
           Height = 21
           Caption = '* Mail'
         end
         object Registration_date_L: TLabel
           Left = 15
-          Top = 155
+          Top = 195
           Width = 139
           Height = 21
           Caption = '* Registration date'
+        end
+        object Host_L: TLabel
+          Left = 15
+          Top = 55
+          Width = 71
+          Height = 21
+          Caption = '* Host_L'
         end
         object ID_DBE: TDBEdit
           Left = 176
@@ -287,31 +288,38 @@ object Password_magnet_F: TPassword_magnet_F
         end
         object Login_DBE: TDBEdit
           Left = 176
-          Top = 50
+          Top = 85
           Width = 220
           Height = 29
           TabOrder = 1
         end
         object Password_DBE: TDBEdit
           Left = 176
-          Top = 85
+          Top = 120
           Width = 220
           Height = 29
           TabOrder = 2
         end
         object Mail_DBE: TDBEdit
           Left = 176
-          Top = 120
+          Top = 155
           Width = 220
           Height = 29
           TabOrder = 3
         end
         object Registration_date_DBE: TDBEdit
           Left = 176
-          Top = 155
+          Top = 190
           Width = 220
           Height = 29
           TabOrder = 4
+        end
+        object Host_DBE: TDBEdit
+          Left = 176
+          Top = 50
+          Width = 220
+          Height = 29
+          TabOrder = 5
         end
       end
       object Person_P: TPanel
@@ -321,7 +329,6 @@ object Password_magnet_F: TPassword_magnet_F
         Height = 642
         Align = alLeft
         TabOrder = 1
-        ExplicitLeft = 421
         object First_name_L: TLabel
           Left = 20
           Top = 20

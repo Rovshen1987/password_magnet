@@ -8,6 +8,7 @@
 *.tds
 *.cbproj.local
 /__astcache/**
+/archive/**
 /helper/**
 /__history/**
 /__recovery/**
