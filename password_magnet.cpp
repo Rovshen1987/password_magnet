@@ -34,17 +34,18 @@ this->PlayMarker_L->Font->Style = this->PlayMarker_L->Font->Style>>fsUnderline;
 
 void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
 {
-//DBGrid1->Columns->Delete(1);
+// const AnsiString jek = "ID";
 //
-//Button2->
-//Password_magnet_F->Caption = this->Sait_L->GetNamePath();
-this->PlayMarker_L->Font->Style = this->PlayMarker_L->Font->Style<<fsUnderline;
+// this->ID_DBE->DataField = jek;
 }
 //---------------------------------------------------------------------------
 
  void TPassword_magnet_F::initilisation()
  {
    this->password_magnet_navigator = std::make_unique<Navigator>();
+   this->password_magnet_site      = std::make_unique<TSite>();
+
+   //----------------------------------------Navigator--------------------------
    this->password_magnet_navigator->set_Site_L(this->Site_L);
    this->password_magnet_navigator->set_Mobile_L(this->Mobile_L);
    this->password_magnet_navigator->set_ICloud_L(this->ICloud_L);
@@ -53,6 +54,7 @@ this->PlayMarker_L->Font->Style = this->PlayMarker_L->Font->Style<<fsUnderline;
    this->password_magnet_navigator->set_Pay_card_L(this->Pay_card_L);
 
    this->password_magnet_navigator->object_click(this->Site_L->GetNamePath());
+   this->Site_L_initilisation();
 
    Password_magnet_F->Height = Password_magnet_F->Constraints->MinHeight;
    Password_magnet_F->Width = Password_magnet_F->Constraints->MinWidth;
@@ -72,6 +74,7 @@ this->initilisation();
 void __fastcall TPassword_magnet_F::Site_LClick(TObject *Sender)
 {
 this->password_magnet_navigator->object_click(this->Site_L->GetNamePath());
+this->Site_L_initilisation();
 }
 //---------------------------------------------------------------------------
 
@@ -148,7 +151,38 @@ Password_magnet_F->Close();
 void TPassword_magnet_F::Site_L_initilisation()
 {
 
-};
+
+if ((this->password_magnet_site->get_Active_object() == true) and
+   (this->password_magnet_site->get_selected_all_object() == false))
+  {
+   this->password_magnet_site->set_ADO_query_o(this->ADOQuery);
+   this->password_magnet_site->set_DB_grid_o(this->DBGrid);
+   this->password_magnet_site->set_ID_DBE(this->ID_DBE);
+   this->password_magnet_site->set_Host_DBE(this->Host_DBE);
+   this->password_magnet_site->set_Login_DBE(this->Login_DBE);
+   this->password_magnet_site->set_Password_DBE(this->Password_DBE);
+   this->password_magnet_site->set_Mail_DBE(this->Mail_DBE);
+   this->password_magnet_site->set_Registration_date_DBE(this->Registration_date_DBE);
+   this->password_magnet_site->set_First_name_DBE(this->First_name_DBE);
+   this->password_magnet_site->set_Last_name_DBE(this->Last_name_DBE);
+   this->password_magnet_site->set_Year_of_birth_DBE(this->Year_of_birth_DBE);
+   this->password_magnet_site->set_Gender_of_person_DBE(this->Gender_of_person_DBE);
+   this->password_magnet_site->set_Place_of_birth_DBE(this->Place_of_birth_DBE);
+   this->password_magnet_site->set_Country_DBE(this->Country_DBE);
+   this->password_magnet_site->set_City_DBE(this->City_DBE);
+   this->password_magnet_site->set_Address_registration_DBE(this->Address_registration_DBE);
+   this->password_magnet_site->set_Place_of_resindece_DBE(this->Place_of_resindece_DBE);
+   this->password_magnet_site->set_Home_telephone_DBE(this->Home_telephone_DBE);
+   this->password_magnet_site->set_Mobile_telephone_DBE(this->Mobile_telephone_DBE);
+
+  };
+
+  if (this->password_magnet_site->get_Active_object_columns_run() == false)
+  {
+   this->password_magnet_site->columns_run();
+  };
+
+}
 
 //---------------------------------------------------------------------------
 void TPassword_magnet_F::Mobile_L_initilisation()

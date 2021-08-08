@@ -171,7 +171,7 @@ object Password_magnet_F: TPassword_magnet_F
       Height = 184
       Align = alTop
       TabOrder = 0
-      object DBGrid1: TDBGrid
+      object DBGrid: TDBGrid
         Left = 1
         Top = 1
         Width = 930
@@ -184,25 +184,6 @@ object Password_magnet_F: TPassword_magnet_F
         TitleFont.Height = -19
         TitleFont.Name = 'Times New Roman'
         TitleFont.Style = []
-        Columns = <
-          item
-            Expanded = False
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Times New Roman'
-            Font.Style = []
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = clWindowText
-            Title.Font.Height = -11
-            Title.Font.Name = 'Times New Roman'
-            Title.Font.Style = []
-            Visible = True
-          end
-          item
-            Expanded = False
-            Visible = True
-          end>
       end
     end
     object DBNavigator: TDBNavigator
@@ -284,6 +265,8 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 15
           Width = 220
           Height = 29
+          DataSource = DataSource
+          ReadOnly = True
           TabOrder = 0
         end
         object Login_DBE: TDBEdit
@@ -291,6 +274,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 85
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 1
         end
         object Password_DBE: TDBEdit
@@ -298,6 +282,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 120
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 2
         end
         object Mail_DBE: TDBEdit
@@ -305,6 +290,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 155
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 3
         end
         object Registration_date_DBE: TDBEdit
@@ -312,6 +298,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 190
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 4
         end
         object Host_DBE: TDBEdit
@@ -319,6 +306,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 50
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 5
         end
       end
@@ -412,6 +400,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 15
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 0
         end
         object Last_name_DBE: TDBEdit
@@ -419,6 +408,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 50
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 1
         end
         object Year_of_birth_DBE: TDBEdit
@@ -426,6 +416,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 85
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 2
         end
         object Gender_of_person_DBE: TDBEdit
@@ -433,6 +424,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 120
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 3
         end
         object Place_of_birth_DBE: TDBEdit
@@ -440,6 +432,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 155
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 4
         end
         object Country_DBE: TDBEdit
@@ -447,6 +440,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 190
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 5
         end
         object City_DBE: TDBEdit
@@ -454,13 +448,15 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 225
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 6
         end
-        object Andress_registration_DBE: TDBEdit
+        object Address_registration_DBE: TDBEdit
           Left = 220
           Top = 260
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 7
         end
         object Place_of_resindece_DBE: TDBEdit
@@ -468,6 +464,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 295
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 8
         end
         object Home_telephone_DBE: TDBEdit
@@ -475,6 +472,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 330
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 9
         end
         object Mobile_telephone_DBE: TDBEdit
@@ -482,6 +480,7 @@ object Password_magnet_F: TPassword_magnet_F
           Top = 365
           Width = 220
           Height = 29
+          DataSource = DataSource
           TabOrder = 10
         end
         object Button1: TButton
@@ -531,8 +530,8 @@ object Password_magnet_F: TPassword_magnet_F
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 884
-    Top = 454
+    Left = 492
+    Top = 502
   end
   object ADOQuery: TADOQuery
     Active = True

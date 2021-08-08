@@ -22,6 +22,7 @@
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.Mask.hpp>
 #include "Navigator.h"
+#include "TSite.h"
 #include <memory>
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
@@ -39,7 +40,7 @@ __published:	// IDE-managed Components
 	TPanel *Client_P;
 	TPanel *DBGrid_P;
 	TSplitter *Splitter2;
-	TDBGrid *DBGrid1;
+	TDBGrid *DBGrid;
 	TSplitter *Splitter3;
 	TADOConnection *ADOConnection;
 	TADOQuery *ADOQuery;
@@ -80,7 +81,7 @@ __published:	// IDE-managed Components
 	TDBEdit *Place_of_birth_DBE;
 	TDBEdit *Country_DBE;
 	TDBEdit *City_DBE;
-	TDBEdit *Andress_registration_DBE;
+	TDBEdit *Address_registration_DBE;
 	TDBEdit *Place_of_resindece_DBE;
 	TDBEdit *Home_telephone_DBE;
 	TDBEdit *Mobile_telephone_DBE;
@@ -108,8 +109,9 @@ private:	// User declarations
     void Password_magnet_F_RESIZE();
 public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);
-
+														  //columns_run
 	std::unique_ptr<Navigator> password_magnet_navigator;
+    std::unique_ptr<TSite>     password_magnet_site;
 
 	void Site_L_initilisation();
 	void Mobile_L_initilisation();
