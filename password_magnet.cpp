@@ -28,7 +28,7 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
 
 //Password_magnet_F->Caption = DBGrid1->Columns->Count;
 
-this->PlayMarker_L->Font->Style = this->PlayMarker_L->Font->Style>>fsUnderline;
+//this->PlayMarker_NL->Font->Style = this->PlayMarker_NL->Font->Style>>fsUnderline;
 }
 //---------------------------------------------------------------------------
 
@@ -46,14 +46,15 @@ void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
    this->password_magnet_site      = std::make_unique<TSite>();
 
    //----------------------------------------Navigator--------------------------
-   this->password_magnet_navigator->set_Site_L(this->Site_L);
-   this->password_magnet_navigator->set_Mobile_L(this->Mobile_L);
-   this->password_magnet_navigator->set_ICloud_L(this->ICloud_L);
-   this->password_magnet_navigator->set_PlayMarker_L(this->PlayMarker_L);
-   this->password_magnet_navigator->set_Computer_L(this->Computer_L);
-   this->password_magnet_navigator->set_Pay_card_L(this->Pay_card_L);
+   this->password_magnet_navigator->set_Site_NL(this->Site_NL);
+   this->password_magnet_navigator->set_Mail_NL(this->Mail_NL);
+   this->password_magnet_navigator->set_Mobile_NL(this->Mobile_NL);
+   this->password_magnet_navigator->set_ICloud_NL(this->ICloud_NL);
+   this->password_magnet_navigator->set_PlayMarker_NL(this->PlayMarker_NL);
+   this->password_magnet_navigator->set_Computer_NL(this->Computer_NL);
+   this->password_magnet_navigator->set_Paycard_NL(this->Paycard_NL);
 
-   this->password_magnet_navigator->object_click(this->Site_L->GetNamePath());
+   this->password_magnet_navigator->object_click(this->Site_NL->GetNamePath());
    this->Site_L_initilisation();
 
    Password_magnet_F->Height = Password_magnet_F->Constraints->MinHeight;
@@ -71,40 +72,40 @@ this->initilisation();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::Site_LClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::Site_NLClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->Site_L->GetNamePath());
+this->password_magnet_navigator->object_click(this->Site_NL->GetNamePath());
 this->Site_L_initilisation();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::Mobile_LClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::Mobile_NLClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->Mobile_L->GetNamePath());
+this->password_magnet_navigator->object_click(this->Mobile_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::ICloud_LClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::ICloud_NLClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->ICloud_L->GetNamePath());
+this->password_magnet_navigator->object_click(this->ICloud_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::PlayMarker_LClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::PlayMarker_NLClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->PlayMarker_L->GetNamePath());
+this->password_magnet_navigator->object_click(this->PlayMarker_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::Computer_LClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::Computer_NLClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->Computer_L->GetNamePath());
+this->password_magnet_navigator->object_click(this->Computer_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::Pay_card_LClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::Paycard_NLClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->Pay_card_L->GetNamePath());
+this->password_magnet_navigator->object_click(this->Paycard_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
@@ -214,4 +215,10 @@ void TPassword_magnet_F::Paycard_initilisation()
 
 };
 
+
+void __fastcall TPassword_magnet_F::Mail_NLClick(TObject *Sender)
+{
+this->password_magnet_navigator->object_click(this->Mail_NL->GetNamePath());
+}
+//---------------------------------------------------------------------------
 

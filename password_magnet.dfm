@@ -57,7 +57,7 @@ object Password_magnet_F: TPassword_magnet_F
     Height = 878
     Align = alLeft
     TabOrder = 2
-    object Site_L: TLabel
+    object Site_NL: TLabel
       Left = 15
       Top = 15
       Width = 28
@@ -70,11 +70,11 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = Site_LClick
+      OnClick = Site_NLClick
     end
-    object Mobile_L: TLabel
+    object Mobile_NL: TLabel
       Left = 15
-      Top = 50
+      Top = 90
       Width = 52
       Height = 21
       Cursor = crHandPoint
@@ -85,11 +85,11 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = Mobile_LClick
+      OnClick = Mobile_NLClick
     end
-    object Computer_L: TLabel
+    object Computer_NL: TLabel
       Left = 15
-      Top = 155
+      Top = 195
       Width = 75
       Height = 21
       Cursor = crHandPoint
@@ -100,11 +100,11 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = Computer_LClick
+      OnClick = Computer_NLClick
     end
-    object ICloud_L: TLabel
+    object ICloud_NL: TLabel
       Left = 15
-      Top = 85
+      Top = 125
       Width = 52
       Height = 21
       Cursor = crHandPoint
@@ -115,11 +115,11 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = ICloud_LClick
+      OnClick = ICloud_NLClick
     end
-    object PlayMarker_L: TLabel
+    object PlayMarker_NL: TLabel
       Left = 15
-      Top = 120
+      Top = 160
       Width = 85
       Height = 21
       Cursor = crHandPoint
@@ -130,11 +130,11 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = PlayMarker_LClick
+      OnClick = PlayMarker_NLClick
     end
-    object Pay_card_L: TLabel
+    object Paycard_NL: TLabel
       Left = 15
-      Top = 190
+      Top = 230
       Width = 61
       Height = 21
       Cursor = crHandPoint
@@ -145,7 +145,22 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = Pay_card_LClick
+      OnClick = Paycard_NLClick
+    end
+    object Mail_NL: TLabel
+      Left = 15
+      Top = 55
+      Width = 66
+      Height = 21
+      Cursor = crHandPoint
+      Caption = 'Mail_NL'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clHighlight
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+      OnClick = Mail_NLClick
     end
   end
   object Client_P: TPanel
