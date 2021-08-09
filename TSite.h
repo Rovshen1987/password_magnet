@@ -51,14 +51,14 @@ class TSite
 
 		 TADOQuery*    ADO_query_o;
 		 TDBGrid*      DB_grid_o;
-
+//----------------------------------------------
 		 TDBEdit*      ID_DBE;
 		 TDBEdit*      Host_DBE;
 		 TDBEdit*      Login_DBE;
 		 TDBEdit*      Password_DBE;
 		 TDBEdit*      Mail_DBE;
 		 TDBEdit*      Registration_date_DBE;
-
+//----------------------------------------------
 		 TDBEdit*      First_name_DBE;
 		 TDBEdit*      Last_name_DBE;
 		 TDBEdit*      Year_of_birth_DBE;
@@ -70,7 +70,7 @@ class TSite
 		 TDBEdit*      Place_of_resindece_DBE;
 		 TDBEdit*      Home_telephone_DBE;
 		 TDBEdit*      Mobile_telephone_DBE;
-
+//-------------------------------------------
 
  private:
 		const AnsiString Path_name = "TSite";

@@ -93,6 +93,7 @@ __published:	// IDE-managed Components
 	TLabel *Host_L;
 	TDBEdit *Host_DBE;
 	TLabel *Mail_NL;
+	TLabel *Docfile_NL;
 	void __fastcall EditCopy1Execute(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
@@ -106,6 +107,7 @@ __published:	// IDE-managed Components
 	void __fastcall FormResize(TObject *Sender);
 	void __fastcall Exit1Click(TObject *Sender);
 	void __fastcall Mail_NLClick(TObject *Sender);
+	void __fastcall Docfile_NLClick(TObject *Sender);
 private:	// User declarations
 	void initilisation();
     void Password_magnet_F_RESIZE();
@@ -115,12 +117,15 @@ public:		// User declarations
 	std::unique_ptr<Navigator> password_magnet_navigator;
     std::unique_ptr<TSite>     password_magnet_site;
 
-	void Site_L_initilisation();
-	void Mobile_L_initilisation();
-	void ICloud_L_initilisation();
-	void PlyMarker_L_initilisation();
-	void Computer_L_initilisation();
-	void Paycard_initilisation();
+	void Site_NL_initilisation();
+	void Mail_NL_initilisation();
+	void Mobile_NL_initilisation();
+	void ICloud_NL_initilisation();
+	void PlyMarker_NL_initilisation();
+	void Computer_NL_initilisation();
+	void Paycard_NL_initilisation();
+	void Docfile_NL_initilisation();
+
 
 };
 //---------------------------------------------------------------------------

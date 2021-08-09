@@ -10,6 +10,7 @@
    this->PlayMarker_BOOL = false;
    this->Computer_BOOL   = false;
    this->Paycard_BOOL    = false;
+   this->Docfile_BOOL    = false;
  };
 
  //-------------------Destructor-----------------------------------------------
@@ -23,6 +24,7 @@
 	 this->PlayMarker_NL  = 0;
 	 this->Computer_NL    = 0;
 	 this->Paycard_NL     = 0;
+	 this->Docfile_NL     = 0;
 
 	 delete this->Site_NL;
 	 delete this->Mail_NL;
@@ -31,6 +33,7 @@
 	 delete this->PlayMarker_NL;
 	 delete this->Computer_NL;
 	 delete this->Paycard_NL;
+	 delete this->Docfile_NL;
 
  };
 
@@ -75,6 +78,12 @@
  void Navigator::set_Paycard_NL(TLabel* object)
  {
 	this->Paycard_NL = object;
+ };
+
+  //-----------------------------------------------------------------------------
+ void Navigator::set_Docfile_NL(TLabel* object)
+ {
+	this->Docfile_NL = object;
  };
 
  //-----------------------------------------------------------------------------
@@ -127,6 +136,12 @@
 	 return this->Paycard_BOOL;
  };
 
+  //-----------------------------------------------------------------------------
+ bool Navigator::get_Docfile_BOOL()
+ {
+	 return this->Docfile_BOOL;
+ };
+
 //------------------------------------------------------------------------------
 //---------------------------PRIVATE SECTION------------------------------------
 
@@ -176,6 +191,12 @@
 	return result;
    };
 
+   result++; //8
+   if (name_object == "Docfile_NL")
+   {
+	return result;
+   };
+
    return result;
  };
 
@@ -216,6 +237,11 @@
 
   case 7: {
 		   this->Paycard_BUTTON();
+		   break;
+		  };
+
+  case 8: {
+		   this->Docfile_BUTTON();
 		   break;
 		  };
 
@@ -282,6 +308,14 @@
   this->set_style_ALL();
  };
 
+ //------------------------------------------------------------------------------
+ void Navigator::Docfile_BUTTON()
+ {
+  this->All_varrible_false();
+  this->Docfile_BOOL = true;
+  this->set_style_ALL();
+ };
+
 //------------------------------------------------------------------------------
 void Navigator::All_varrible_false()
  {
@@ -292,6 +326,7 @@ void Navigator::All_varrible_false()
 	 this->PlayMarker_BOOL  = false;
 	 this->Computer_BOOL    = false;
 	 this->Paycard_BOOL     = false;
+	 this->Docfile_BOOL     = false;
  };
 
 
@@ -374,6 +409,17 @@ void Navigator::set_style_ALL()
   {
    this->Paycard_NL->Font->Size  = this->false_varrible_int;
    this->Paycard_NL->Font->Style = this->Paycard_NL->Font->Style>>fsUnderline;
+  };
+
+  if (Docfile_BOOL == true)
+  {
+   this->Docfile_NL->Font->Size  = this->true_varrible_int;
+   this->Docfile_NL->Font->Style = this->Docfile_NL->Font->Style<<fsUnderline;
+  }
+  else
+  {
+   this->Docfile_NL->Font->Size  = this->false_varrible_int;
+   this->Docfile_NL->Font->Style = this->Docfile_NL->Font->Style>>fsUnderline;
   };
 
 };

@@ -150,10 +150,10 @@ object Password_magnet_F: TPassword_magnet_F
     object Mail_NL: TLabel
       Left = 15
       Top = 55
-      Width = 66
+      Width = 32
       Height = 21
       Cursor = crHandPoint
-      Caption = 'Mail_NL'
+      Caption = 'Mail'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
       Font.Height = -19
@@ -161,6 +161,21 @@ object Password_magnet_F: TPassword_magnet_F
       Font.Style = []
       ParentFont = False
       OnClick = Mail_NLClick
+    end
+    object Docfile_NL: TLabel
+      Left = 15
+      Top = 265
+      Width = 54
+      Height = 21
+      Cursor = crHandPoint
+      Caption = 'Docfile'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clHighlight
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+      OnClick = Docfile_NLClick
     end
   end
   object Client_P: TPanel

@@ -53,9 +53,10 @@ void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
    this->password_magnet_navigator->set_PlayMarker_NL(this->PlayMarker_NL);
    this->password_magnet_navigator->set_Computer_NL(this->Computer_NL);
    this->password_magnet_navigator->set_Paycard_NL(this->Paycard_NL);
+   this->password_magnet_navigator->set_Docfile_NL(this->Docfile_NL);
 
    this->password_magnet_navigator->object_click(this->Site_NL->GetNamePath());
-   this->Site_L_initilisation();
+   this->Site_NL_initilisation();
 
    Password_magnet_F->Height = Password_magnet_F->Constraints->MinHeight;
    Password_magnet_F->Width = Password_magnet_F->Constraints->MinWidth;
@@ -75,7 +76,7 @@ this->initilisation();
 void __fastcall TPassword_magnet_F::Site_NLClick(TObject *Sender)
 {
 this->password_magnet_navigator->object_click(this->Site_NL->GetNamePath());
-this->Site_L_initilisation();
+this->Site_NL_initilisation();
 }
 //---------------------------------------------------------------------------
 
@@ -149,7 +150,7 @@ Password_magnet_F->Close();
 }
 
 //---------------------------------------------------------------------------
-void TPassword_magnet_F::Site_L_initilisation()
+void TPassword_magnet_F::Site_NL_initilisation()
 {
 
 
@@ -186,31 +187,43 @@ if ((this->password_magnet_site->get_Active_object() == true) and
 }
 
 //---------------------------------------------------------------------------
-void TPassword_magnet_F::Mobile_L_initilisation()
+void TPassword_magnet_F::Mail_NL_initilisation()
 {
 
 };
 
 //---------------------------------------------------------------------------
-void TPassword_magnet_F::ICloud_L_initilisation()
+void TPassword_magnet_F::Mobile_NL_initilisation()
 {
 
 };
 
 //---------------------------------------------------------------------------
-void TPassword_magnet_F::PlyMarker_L_initilisation()
+void TPassword_magnet_F::ICloud_NL_initilisation()
 {
 
 };
 
 //---------------------------------------------------------------------------
-void TPassword_magnet_F::Computer_L_initilisation()
+void TPassword_magnet_F::PlyMarker_NL_initilisation()
 {
 
 };
 
 //---------------------------------------------------------------------------
-void TPassword_magnet_F::Paycard_initilisation()
+void TPassword_magnet_F::Computer_NL_initilisation()
+{
+
+};
+
+//---------------------------------------------------------------------------
+void TPassword_magnet_F::Paycard_NL_initilisation()
+{
+
+};
+
+//---------------------------------------------------------------------------
+void TPassword_magnet_F::Docfile_NL_initilisation()
 {
 
 };
@@ -219,6 +232,12 @@ void TPassword_magnet_F::Paycard_initilisation()
 void __fastcall TPassword_magnet_F::Mail_NLClick(TObject *Sender)
 {
 this->password_magnet_navigator->object_click(this->Mail_NL->GetNamePath());
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPassword_magnet_F::Docfile_NLClick(TObject *Sender)
+{
+this->password_magnet_navigator->object_click(this->Docfile_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
