@@ -23,6 +23,7 @@
 #include <Vcl.Mask.hpp>
 #include "Navigator.h"
 #include "TSite.h"
+#include "_Resize.h"
 #include <memory>
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
@@ -125,6 +126,7 @@ public:		// User declarations
 	void Computer_NL_initilisation();
 	void Paycard_NL_initilisation();
 	void Docfile_NL_initilisation();
+	void _Resize_initilisation();
 
 
 };

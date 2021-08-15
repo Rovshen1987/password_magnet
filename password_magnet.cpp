@@ -241,3 +241,7 @@ this->password_magnet_navigator->object_click(this->Docfile_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
+void TPassword_magnet_F::_Resize_initilisation()
+{
+
+};

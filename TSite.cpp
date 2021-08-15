@@ -9,7 +9,7 @@
  {
 	this->Active_object             = true;
 	this->Active_object_columns_run = false;
-    this->columns       = std::make_unique<Add_columns_r>();
+	this->columns       = std::make_unique<Add_columns_r>();
  };
 
  TSite::~TSite()
@@ -390,4 +390,14 @@ void TSite::Selected_field()
 	this->Place_of_resindece_DBE->DataField     = "Place_of_resindece";
 	this->Home_telephone_DBE->DataField         = "Home_telephone";
 	this->Mobile_telephone_DBE->DataField       = "Mobile_telephone";
+};
+
+void new_position()
+{
+
+};
+
+void old_position()
+{
+
 };

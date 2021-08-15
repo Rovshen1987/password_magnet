@@ -6,6 +6,8 @@
 
 
 
+
+
 class TSite
 {
   public:
@@ -44,6 +46,9 @@ class TSite
 
 		 void          null_all_object_point();
 		 void          columns_run();
+
+		 void          new_position();
+		 void          old_position();
 
 //		 AnsiString    get_Host();
 

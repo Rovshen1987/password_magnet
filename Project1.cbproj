@@ -157,6 +157,12 @@
         <None Include="TSite.h">
             <BuildOrder>8</BuildOrder>
         </None>
+        <None Include="_Resize.h">
+            <BuildOrder>13</BuildOrder>
+        </None>
+        <None Include="_Resize_inside.h">
+            <BuildOrder>12</BuildOrder>
+        </None>
         <FormResources Include="password_magnet.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
