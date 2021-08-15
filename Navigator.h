@@ -11,7 +11,7 @@ public:
 	 void set_Mail_NL(TLabel* object);
 	 void set_Mobile_NL(TLabel* object);
 	 void set_ICloud_NL(TLabel* object);
-	 void set_PlayMarker_NL(TLabel* object);
+	 void set_PlayMarket_NL(TLabel* object);
 	 void set_Computer_NL(TLabel* object);
 	 void set_Paycard_NL(TLabel* object);
 	 void set_Docfile_NL(TLabel* object);
@@ -22,7 +22,7 @@ public:
 	 bool get_Mail_BOOL();
 	 bool get_Mobile_BOOL();
 	 bool get_ICloud_BOOL();
-	 bool get_PlayMarker_BOOL();
+	 bool get_PlayMarket_BOOL();
 	 bool get_Computer_BOOL();
 	 bool get_Paycard_BOOL();
 	 bool get_Docfile_BOOL();
@@ -33,7 +33,7 @@ private:
 	 TLabel* Mail_NL;
 	 TLabel* Mobile_NL;
 	 TLabel* ICloud_NL;
-	 TLabel* PlayMarker_NL;
+	 TLabel* PlayMarket_NL;
 	 TLabel* Computer_NL;
 	 TLabel* Paycard_NL;
 	 TLabel* Docfile_NL;
@@ -45,7 +45,7 @@ private:
 	 bool Mail_BOOL;
 	 bool Mobile_BOOL;
 	 bool ICloud_BOOL;
-	 bool PlayMarker_BOOL;
+	 bool PlayMarket_BOOL;
 	 bool Computer_BOOL;
 	 bool Paycard_BOOL;
 	 bool Docfile_BOOL;
@@ -57,7 +57,7 @@ private:
 	 void Mail_BUTTON();
 	 void Mobile_BUTTON();
 	 void ICloud_BUTTON();
-	 void PlayMarker_BUTTON();
+	 void PlayMarket_BUTTON();
 	 void Computer_BUTTON();
 	 void Paycard_BUTTON();
      void Docfile_BUTTON();

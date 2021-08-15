@@ -117,20 +117,20 @@ object Password_magnet_F: TPassword_magnet_F
       ParentFont = False
       OnClick = ICloud_NLClick
     end
-    object PlayMarker_NL: TLabel
+    object PlayMarket_NL: TLabel
       Left = 15
       Top = 160
-      Width = 85
+      Width = 84
       Height = 21
       Cursor = crHandPoint
-      Caption = 'PlayMarker'
+      Caption = 'PlayMarket'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
       Font.Height = -19
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
-      OnClick = PlayMarker_NLClick
+      OnClick = PlayMarket_NLClick
     end
     object Paycard_NL: TLabel
       Left = 15
@@ -529,7 +529,6 @@ object Password_magnet_F: TPassword_magnet_F
           Height = 33
           Caption = 'Button2'
           TabOrder = 12
-          OnClick = Button2Click
         end
       end
     end

@@ -87,7 +87,7 @@ __published:	// IDE-managed Components
 	TDBEdit *Home_telephone_DBE;
 	TDBEdit *Mobile_telephone_DBE;
 	TLabel *ICloud_NL;
-	TLabel *PlayMarker_NL;
+	TLabel *PlayMarket_NL;
 	TLabel *Paycard_NL;
 	TButton *Button1;
 	TButton *Button2;
@@ -97,12 +97,11 @@ __published:	// IDE-managed Components
 	TLabel *Docfile_NL;
 	void __fastcall EditCopy1Execute(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
-	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Site_NLClick(TObject *Sender);
 	void __fastcall Mobile_NLClick(TObject *Sender);
 	void __fastcall ICloud_NLClick(TObject *Sender);
-	void __fastcall PlayMarker_NLClick(TObject *Sender);
+	void __fastcall PlayMarket_NLClick(TObject *Sender);
 	void __fastcall Computer_NLClick(TObject *Sender);
 	void __fastcall Paycard_NLClick(TObject *Sender);
 	void __fastcall FormResize(TObject *Sender);

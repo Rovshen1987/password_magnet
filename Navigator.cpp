@@ -7,7 +7,7 @@
    this->Mail_BOOL       = false;
    this->Mobile_BOOL     = false;
    this->ICloud_BOOL     = false;
-   this->PlayMarker_BOOL = false;
+   this->PlayMarket_BOOL = false;
    this->Computer_BOOL   = false;
    this->Paycard_BOOL    = false;
    this->Docfile_BOOL    = false;
@@ -21,7 +21,7 @@
 	 this->Mail_NL        = 0;
 	 this->Mobile_NL      = 0;
 	 this->ICloud_NL      = 0;
-	 this->PlayMarker_NL  = 0;
+	 this->PlayMarket_NL  = 0;
 	 this->Computer_NL    = 0;
 	 this->Paycard_NL     = 0;
 	 this->Docfile_NL     = 0;
@@ -30,7 +30,7 @@
 	 delete this->Mail_NL;
 	 delete this->Mobile_NL;
 	 delete this->ICloud_NL;
-	 delete this->PlayMarker_NL;
+	 delete this->PlayMarket_NL;
 	 delete this->Computer_NL;
 	 delete this->Paycard_NL;
 	 delete this->Docfile_NL;
@@ -63,9 +63,9 @@
  };
 
  //-----------------------------------------------------------------------------
- void Navigator::set_PlayMarker_NL(TLabel* object)
+ void Navigator::set_PlayMarket_NL(TLabel* object)
  {
-	this->PlayMarker_NL = object;
+	this->PlayMarket_NL = object;
  };
 
  //-----------------------------------------------------------------------------
@@ -119,9 +119,9 @@
  };
 
  //-----------------------------------------------------------------------------
- bool Navigator::get_PlayMarker_BOOL()
+ bool Navigator::get_PlayMarket_BOOL()
  {
-	 return this->PlayMarker_BOOL;
+	 return this->PlayMarket_BOOL;
  };
 
  //-----------------------------------------------------------------------------
@@ -174,7 +174,7 @@
    };
 
    result++; //5
-   if (name_object == "PlayMarker_NL")
+   if (name_object == "PlayMarket_NL")
    {
 	return result;
    };
@@ -226,7 +226,7 @@
 		  };
 
   case 5: {
-		   this->PlayMarker_BUTTON();
+		   this->PlayMarket_BUTTON();
 		   break;
 		  };
 
@@ -285,10 +285,10 @@
  };
 
 //------------------------------------------------------------------------------
- void Navigator::PlayMarker_BUTTON()
+ void Navigator::PlayMarket_BUTTON()
  {
   this->All_varrible_false();
-  this->PlayMarker_BOOL = true;
+  this->PlayMarket_BOOL = true;
   this->set_style_ALL();
  };
 
@@ -323,7 +323,7 @@ void Navigator::All_varrible_false()
 	 this->Mail_BOOL        = false;
 	 this->Mobile_BOOL      = false;
 	 this->ICloud_BOOL      = false;
-	 this->PlayMarker_BOOL  = false;
+	 this->PlayMarket_BOOL  = false;
 	 this->Computer_BOOL    = false;
 	 this->Paycard_BOOL     = false;
 	 this->Docfile_BOOL     = false;
@@ -377,15 +377,15 @@ void Navigator::set_style_ALL()
    this->ICloud_NL->Font->Style = this->ICloud_NL->Font->Style>>fsUnderline;
   };
 
-  if (this->PlayMarker_BOOL == true)
+  if (this->PlayMarket_BOOL == true)
   {
-   this->PlayMarker_NL->Font->Size  = this->true_varrible_int;
-   this->PlayMarker_NL->Font->Style = this->PlayMarker_NL->Font->Style<<fsUnderline;
+   this->PlayMarket_NL->Font->Size  = this->true_varrible_int;
+   this->PlayMarket_NL->Font->Style = this->PlayMarket_NL->Font->Style<<fsUnderline;
   }
   else
   {
-   this->PlayMarker_NL->Font->Size  = this->false_varrible_int;
-   this->PlayMarker_NL->Font->Style = this->PlayMarker_NL->Font->Style>>fsUnderline;
+   this->PlayMarket_NL->Font->Size  = this->false_varrible_int;
+   this->PlayMarket_NL->Font->Style = this->PlayMarket_NL->Font->Style>>fsUnderline;
   };
 
 

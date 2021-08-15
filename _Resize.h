@@ -29,6 +29,28 @@ class _Resize
    this->date->push_back(object, new_left, new_top, new_width, new_height, true);
   }
 
+  void visible_true_position()
+  {
+	if (this->date->empty() == false)
+	{
+	  for (auto y : this->date)
+	  {
+	   y->visible_true_position();
+	  };
+	};
+  };
+
+  void visible_false_position()
+  {
+	if (this->date->empty() == false)
+	{
+	  for (auto y : this->date)
+	  {
+	   y->visible_false_position();
+	  };
+	};
+  };
+
   private:
 
   std::vector<_Resize_inside<T>*>* date;

@@ -32,13 +32,6 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
-{
-// const AnsiString jek = "ID";
-//
-// this->ID_DBE->DataField = jek;
-}
-//---------------------------------------------------------------------------
 
  void TPassword_magnet_F::initilisation()
  {
@@ -50,7 +43,7 @@ void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
    this->password_magnet_navigator->set_Mail_NL(this->Mail_NL);
    this->password_magnet_navigator->set_Mobile_NL(this->Mobile_NL);
    this->password_magnet_navigator->set_ICloud_NL(this->ICloud_NL);
-   this->password_magnet_navigator->set_PlayMarker_NL(this->PlayMarker_NL);
+   this->password_magnet_navigator->set_PlayMarket_NL(this->PlayMarket_NL);
    this->password_magnet_navigator->set_Computer_NL(this->Computer_NL);
    this->password_magnet_navigator->set_Paycard_NL(this->Paycard_NL);
    this->password_magnet_navigator->set_Docfile_NL(this->Docfile_NL);
@@ -92,9 +85,9 @@ this->password_magnet_navigator->object_click(this->ICloud_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::PlayMarker_NLClick(TObject *Sender)
+void __fastcall TPassword_magnet_F::PlayMarket_NLClick(TObject *Sender)
 {
-this->password_magnet_navigator->object_click(this->PlayMarker_NL->GetNamePath());
+this->password_magnet_navigator->object_click(this->PlayMarket_NL->GetNamePath());
 }
 //---------------------------------------------------------------------------
 
@@ -243,5 +236,47 @@ this->password_magnet_navigator->object_click(this->Docfile_NL->GetNamePath());
 
 void TPassword_magnet_F::_Resize_initilisation()
 {
+ int _navigator_int = 0;
+
+ if (this->password_magnet_navigator->get_Site_BOOL() == true)
+ {
+ _navigator_int = 1; //Site
+ };
+
+ if (this->password_magnet_navigator->get_Mail_BOOL() == true)
+ {
+ _navigator_int = 2; //Mail
+ };
+
+ if (this->password_magnet_navigator->get_Mobile_BOOL() == true)
+ {
+ _navigator_int = 3; //Mobile
+ };
+
+ if (this->password_magnet_navigator->get_ICloud_BOOL() == true)
+ {
+ _navigator_int = 4; //ICloud
+ };
+
+ if (this->password_magnet_navigator->get_PlayMarket_BOOL() == true)
+ {
+ _navigator_int = 5; //PlayMarket
+ };
+
+ if (this->password_magnet_navigator->get_Computer_BOOL() == true)
+ {
+ _navigator_int = 6; //Computer
+ };
+
+ if (this->password_magnet_navigator->get_Paycard_BOOL() == true)
+ {
+ _navigator_int = 7; //Paycard
+ };
+
+ if (this->password_magnet_navigator->get_Docfile_BOOL() == true)
+ {
+ _navigator_int = 8; //Docfile
+ };
 
 };
+
