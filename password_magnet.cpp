@@ -35,8 +35,9 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
 
  void TPassword_magnet_F::initilisation()
  {
-   this->password_magnet_navigator = std::make_unique<Navigator>();
-   this->password_magnet_site      = std::make_unique<TSite>();
+   this->password_magnet_navigator   = std::make_unique<Navigator>();
+   this->password_magnet_site        = std::make_unique<TSite>();
+
 
    //----------------------------------------Navigator--------------------------
    this->password_magnet_navigator->set_Site_NL(this->Site_NL);
@@ -132,8 +133,8 @@ void __fastcall TPassword_magnet_F::FormResize(TObject *Sender)
 {
 Password_magnet_F_RESIZE();
 
-Password_magnet_F->Caption = AnsiString("x = ")+ Password_magnet_F->Width +
-                             AnsiString("y = ")+ Password_magnet_F->Height;
+Password_magnet_F->Caption = AnsiString("P1 = ")+ Password_magnet_F->Gadjet_P->Width +
+							 AnsiString("; P2 = ")+ Password_magnet_F->Person_P->Width;
 }
 //---------------------------------------------------------------------------
 

@@ -115,7 +115,8 @@ public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);
 														  //columns_run
 	std::unique_ptr<Navigator> password_magnet_navigator;
-    std::unique_ptr<TSite>     password_magnet_site;
+	std::unique_ptr<TSite>     password_magnet_site;
+
 
 	void Site_NL_initilisation();
 	void Mail_NL_initilisation();
