@@ -23,7 +23,6 @@
 #include <Vcl.Mask.hpp>
 #include "Navigator.h"
 #include "TSite.h"
-#include "_Resize.h"
 #include <memory>
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
@@ -38,32 +37,28 @@ __published:	// IDE-managed Components
 	TMenuItem *Exit1;
 	TPanel *Navigator_P;
 	TSplitter *Splitter1;
-	TPanel *Client_P;
-	TPanel *DBGrid_P;
-	TSplitter *Splitter2;
-	TDBGrid *DBGrid;
 	TSplitter *Splitter3;
 	TADOConnection *ADOConnection;
 	TADOQuery *ADOQuery;
 	TDataSource *DataSource;
-	TDBNavigator *DBNavigator;
 	TLabel *Site_NL;
 	TLabel *Mobile_NL;
 	TLabel *Computer_NL;
+	TLabel *ICloud_NL;
+	TLabel *PlayMarket_NL;
+	TLabel *Paycard_NL;
+	TLabel *Mail_NL;
+	TLabel *Docfile_NL;
+	TPageControl *Control_TSh;
+	TTabSheet *Site_TSh;
+	TPanel *Client_P;
+	TSplitter *Splitter2;
+	TPanel *DBGrid_P;
+	TDBGrid *DBGrid;
+	TDBNavigator *DBNavigator;
 	TPanel *Date_navigator_P;
-	TPanel *Gadjet_P;
-	TLabel *ID_L;
-	TLabel *Login_L;
-	TLabel *Password_L;
-	TLabel *Mail_L;
-	TLabel *Registration_date_L;
-	TDBEdit *ID_DBE;
-	TDBEdit *Login_DBE;
-	TDBEdit *Password_DBE;
-	TDBEdit *Mail_DBE;
-	TDBEdit *Registration_date_DBE;
-	TPanel *Person_P;
 	TSplitter *Splitter4;
+	TPanel *Person_P;
 	TLabel *First_name_L;
 	TLabel *Last_name_L;
 	TLabel *Year_of_birth_L;
@@ -86,15 +81,28 @@ __published:	// IDE-managed Components
 	TDBEdit *Place_of_resindece_DBE;
 	TDBEdit *Home_telephone_DBE;
 	TDBEdit *Mobile_telephone_DBE;
-	TLabel *ICloud_NL;
-	TLabel *PlayMarket_NL;
-	TLabel *Paycard_NL;
 	TButton *Button1;
 	TButton *Button2;
+	TPanel *Gadjet_P;
+	TLabel *ID_L;
+	TLabel *Login_L;
+	TLabel *Password_L;
+	TLabel *Mail_L;
+	TLabel *Registration_date_L;
 	TLabel *Host_L;
+	TDBEdit *ID_DBE;
+	TDBEdit *Login_DBE;
+	TDBEdit *Password_DBE;
+	TDBEdit *Mail_DBE;
+	TDBEdit *Registration_date_DBE;
 	TDBEdit *Host_DBE;
-	TLabel *Mail_NL;
-	TLabel *Docfile_NL;
+	TTabSheet *Mail_TSh;
+	TTabSheet *Mobile_TSh;
+	TTabSheet *ICloud_TSh;
+	TTabSheet *PlayMarket_TSh;
+	TTabSheet *Computer_TSh;
+	TTabSheet *Paycard_TSh;
+	TTabSheet *Docfile_TSh;
 	void __fastcall EditCopy1Execute(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -126,6 +134,9 @@ public:		// User declarations
 	void Computer_NL_initilisation();
 	void Paycard_NL_initilisation();
 	void Docfile_NL_initilisation();
+
+    void visible_TSh(TTabSheet* object);
+
 	void _Resize_initilisation();
 
 

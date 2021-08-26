@@ -3,7 +3,7 @@ object Password_magnet_F: TPassword_magnet_F
   Top = 0
   Caption = 'Password_magnet_F'
   ClientHeight = 965
-  ClientWidth = 1074
+  ClientWidth = 1071
   Color = clBtnFace
   Constraints.MinHeight = 790
   Constraints.MinWidth = 1040
@@ -29,7 +29,7 @@ object Password_magnet_F: TPassword_magnet_F
   object Splitter3: TSplitter
     Left = 0
     Top = 43
-    Width = 1074
+    Width = 1071
     Height = 3
     Cursor = crVSplit
     Align = alTop
@@ -38,7 +38,7 @@ object Password_magnet_F: TPassword_magnet_F
   object ToolBar: TToolBar
     Left = 0
     Top = 0
-    Width = 1074
+    Width = 1071
     Height = 43
     Caption = 'ToolBar'
     TabOrder = 0
@@ -46,7 +46,7 @@ object Password_magnet_F: TPassword_magnet_F
   object StatusBar: TStatusBar
     Left = 0
     Top = 924
-    Width = 1074
+    Width = 1071
     Height = 41
     Panels = <>
   end
@@ -178,359 +178,400 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = Docfile_NLClick
     end
   end
-  object Client_P: TPanel
+  object Control_TSh: TPageControl
     Left = 140
     Top = 46
-    Width = 934
+    Width = 931
     Height = 878
+    ActivePage = Site_TSh
     Align = alClient
     TabOrder = 3
-    object Splitter2: TSplitter
-      Left = 1
-      Top = 185
-      Width = 932
-      Height = 3
-      Cursor = crVSplit
-      Align = alTop
-      ExplicitWidth = 705
-    end
-    object DBGrid_P: TPanel
-      Left = 1
-      Top = 1
-      Width = 932
-      Height = 184
-      Align = alTop
-      TabOrder = 0
-      object DBGrid: TDBGrid
-        Left = 1
-        Top = 1
-        Width = 930
-        Height = 182
+    object Site_TSh: TTabSheet
+      Caption = #1057#1072#1081#1090#1099
+      object Client_P: TPanel
+        Left = 0
+        Top = 0
+        Width = 923
+        Height = 842
         Align = alClient
-        DataSource = DataSource
         TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -19
-        TitleFont.Name = 'Times New Roman'
-        TitleFont.Style = []
-      end
-    end
-    object DBNavigator: TDBNavigator
-      Left = 1
-      Top = 188
-      Width = 932
-      Height = 45
-      Cursor = crHandPoint
-      DataSource = DataSource
-      Align = alTop
-      TabOrder = 1
-    end
-    object Date_navigator_P: TPanel
-      Left = 1
-      Top = 233
-      Width = 932
-      Height = 644
-      Align = alClient
-      TabOrder = 2
-      object Splitter4: TSplitter
-        Left = 409
-        Top = 1
-        Width = 0
-        Height = 642
-        ExplicitLeft = 421
-        ExplicitHeight = 534
-      end
-      object Gadjet_P: TPanel
-        Left = 1
-        Top = 1
-        Width = 408
-        Height = 642
-        Align = alLeft
-        TabOrder = 0
-        object ID_L: TLabel
-          Left = 15
-          Top = 20
-          Width = 33
-          Height = 21
-          Caption = '* ID'
+        object Splitter2: TSplitter
+          Left = 1
+          Top = 185
+          Width = 921
+          Height = 3
+          Cursor = crVSplit
+          Align = alTop
+          ExplicitWidth = 705
         end
-        object Login_L: TLabel
-          Left = 15
-          Top = 90
-          Width = 57
-          Height = 21
-          Caption = '* Login'
-        end
-        object Password_L: TLabel
-          Left = 15
-          Top = 125
-          Width = 88
-          Height = 21
-          Caption = '* Password'
-        end
-        object Mail_L: TLabel
-          Left = 15
-          Top = 160
-          Width = 46
-          Height = 21
-          Caption = '* Mail'
-        end
-        object Registration_date_L: TLabel
-          Left = 15
-          Top = 195
-          Width = 139
-          Height = 21
-          Caption = '* Registration date'
-        end
-        object Host_L: TLabel
-          Left = 15
-          Top = 55
-          Width = 71
-          Height = 21
-          Caption = '* Host_L'
-        end
-        object ID_DBE: TDBEdit
-          Left = 176
-          Top = 15
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          ReadOnly = True
+        object DBGrid_P: TPanel
+          Left = 1
+          Top = 1
+          Width = 921
+          Height = 184
+          Align = alTop
           TabOrder = 0
+          object DBGrid: TDBGrid
+            Left = 1
+            Top = 1
+            Width = 919
+            Height = 182
+            Align = alClient
+            DataSource = DataSource
+            TabOrder = 0
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -19
+            TitleFont.Name = 'Times New Roman'
+            TitleFont.Style = []
+          end
         end
-        object Login_DBE: TDBEdit
-          Left = 176
-          Top = 85
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 1
-        end
-        object Password_DBE: TDBEdit
-          Left = 176
-          Top = 120
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 2
-        end
-        object Mail_DBE: TDBEdit
-          Left = 176
-          Top = 155
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 3
-        end
-        object Registration_date_DBE: TDBEdit
-          Left = 176
-          Top = 190
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 4
-        end
-        object Host_DBE: TDBEdit
-          Left = 176
-          Top = 50
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 5
-        end
-      end
-      object Person_P: TPanel
-        Left = 409
-        Top = 1
-        Width = 468
-        Height = 642
-        Align = alLeft
-        TabOrder = 1
-        object First_name_L: TLabel
-          Left = 20
-          Top = 20
-          Width = 73
-          Height = 21
-          Caption = 'Firstname'
-        end
-        object Last_name_L: TLabel
-          Left = 20
-          Top = 55
-          Width = 71
-          Height = 21
+        object DBNavigator: TDBNavigator
+          Left = 1
+          Top = 188
+          Width = 921
+          Height = 45
           Cursor = crHandPoint
-          Caption = 'Lastname'
-        end
-        object Year_of_birth_L: TLabel
-          Left = 20
-          Top = 90
-          Width = 93
-          Height = 21
-          Caption = 'Year of birth'
-        end
-        object Gender_of_person_L: TLabel
-          Left = 20
-          Top = 125
-          Width = 132
-          Height = 21
-          Caption = 'Gender of person'
-        end
-        object Place_of_birth_L: TLabel
-          Left = 20
-          Top = 160
-          Width = 100
-          Height = 21
-          Caption = 'Place of birth'
-        end
-        object Country_L: TLabel
-          Left = 20
-          Top = 195
-          Width = 61
-          Height = 21
-          Caption = 'Country'
-        end
-        object City_L: TLabel
-          Left = 20
-          Top = 230
-          Width = 31
-          Height = 21
-          Caption = 'City'
-        end
-        object Andress_registration_L: TLabel
-          Left = 20
-          Top = 265
-          Width = 149
-          Height = 21
-          Caption = 'Andress registration'
-        end
-        object Place_of_resindece_L: TLabel
-          Left = 20
-          Top = 300
-          Width = 136
-          Height = 21
-          Caption = 'Place of resindece'
-        end
-        object Home_telephone_L: TLabel
-          Left = 20
-          Top = 335
-          Width = 121
-          Height = 21
-          Caption = 'Home telephone'
-        end
-        object Mobile_telephone_L: TLabel
-          Left = 20
-          Top = 370
-          Width = 128
-          Height = 21
-          Caption = 'Mobile telephone'
-        end
-        object First_name_DBE: TDBEdit
-          Left = 220
-          Top = 15
-          Width = 220
-          Height = 29
           DataSource = DataSource
-          TabOrder = 0
-        end
-        object Last_name_DBE: TDBEdit
-          Left = 220
-          Top = 50
-          Width = 220
-          Height = 29
-          DataSource = DataSource
+          Align = alTop
           TabOrder = 1
         end
-        object Year_of_birth_DBE: TDBEdit
-          Left = 220
-          Top = 85
-          Width = 220
-          Height = 29
-          DataSource = DataSource
+        object Date_navigator_P: TPanel
+          Left = 1
+          Top = 233
+          Width = 921
+          Height = 608
+          Align = alClient
           TabOrder = 2
-        end
-        object Gender_of_person_DBE: TDBEdit
-          Left = 220
-          Top = 120
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 3
-        end
-        object Place_of_birth_DBE: TDBEdit
-          Left = 220
-          Top = 155
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 4
-        end
-        object Country_DBE: TDBEdit
-          Left = 220
-          Top = 190
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 5
-        end
-        object City_DBE: TDBEdit
-          Left = 220
-          Top = 225
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 6
-        end
-        object Address_registration_DBE: TDBEdit
-          Left = 220
-          Top = 260
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 7
-        end
-        object Place_of_resindece_DBE: TDBEdit
-          Left = 220
-          Top = 295
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 8
-        end
-        object Home_telephone_DBE: TDBEdit
-          Left = 220
-          Top = 330
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 9
-        end
-        object Mobile_telephone_DBE: TDBEdit
-          Left = 220
-          Top = 365
-          Width = 220
-          Height = 29
-          DataSource = DataSource
-          TabOrder = 10
-        end
-        object Button1: TButton
-          Left = 291
-          Top = 453
-          Width = 73
-          Height = 41
-          Caption = 'Button1'
-          TabOrder = 11
-          OnClick = Button1Click
-        end
-        object Button2: TButton
-          Left = 123
-          Top = 445
-          Width = 105
-          Height = 33
-          Caption = 'Button2'
-          TabOrder = 12
+          object Splitter4: TSplitter
+            Left = 409
+            Top = 1
+            Width = 0
+            Height = 606
+            ExplicitLeft = 421
+            ExplicitHeight = 534
+          end
+          object Person_P: TPanel
+            Left = 409
+            Top = 1
+            Width = 468
+            Height = 606
+            Align = alLeft
+            TabOrder = 0
+            object First_name_L: TLabel
+              Left = 20
+              Top = 20
+              Width = 73
+              Height = 21
+              Caption = 'Firstname'
+            end
+            object Last_name_L: TLabel
+              Left = 20
+              Top = 55
+              Width = 71
+              Height = 21
+              Cursor = crHandPoint
+              Caption = 'Lastname'
+            end
+            object Year_of_birth_L: TLabel
+              Left = 20
+              Top = 90
+              Width = 93
+              Height = 21
+              Caption = 'Year of birth'
+            end
+            object Gender_of_person_L: TLabel
+              Left = 20
+              Top = 125
+              Width = 132
+              Height = 21
+              Caption = 'Gender of person'
+            end
+            object Place_of_birth_L: TLabel
+              Left = 20
+              Top = 160
+              Width = 100
+              Height = 21
+              Caption = 'Place of birth'
+            end
+            object Country_L: TLabel
+              Left = 20
+              Top = 195
+              Width = 61
+              Height = 21
+              Caption = 'Country'
+            end
+            object City_L: TLabel
+              Left = 20
+              Top = 230
+              Width = 31
+              Height = 21
+              Caption = 'City'
+            end
+            object Andress_registration_L: TLabel
+              Left = 20
+              Top = 265
+              Width = 149
+              Height = 21
+              Caption = 'Andress registration'
+            end
+            object Place_of_resindece_L: TLabel
+              Left = 20
+              Top = 300
+              Width = 136
+              Height = 21
+              Caption = 'Place of resindece'
+            end
+            object Home_telephone_L: TLabel
+              Left = 20
+              Top = 335
+              Width = 121
+              Height = 21
+              Caption = 'Home telephone'
+            end
+            object Mobile_telephone_L: TLabel
+              Left = 20
+              Top = 370
+              Width = 128
+              Height = 21
+              Caption = 'Mobile telephone'
+            end
+            object First_name_DBE: TDBEdit
+              Left = 220
+              Top = 15
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 0
+            end
+            object Last_name_DBE: TDBEdit
+              Left = 220
+              Top = 50
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 1
+            end
+            object Year_of_birth_DBE: TDBEdit
+              Left = 220
+              Top = 85
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 2
+            end
+            object Gender_of_person_DBE: TDBEdit
+              Left = 220
+              Top = 120
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 3
+            end
+            object Place_of_birth_DBE: TDBEdit
+              Left = 220
+              Top = 155
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 4
+            end
+            object Country_DBE: TDBEdit
+              Left = 220
+              Top = 190
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 5
+            end
+            object City_DBE: TDBEdit
+              Left = 220
+              Top = 225
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 6
+            end
+            object Address_registration_DBE: TDBEdit
+              Left = 220
+              Top = 260
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 7
+            end
+            object Place_of_resindece_DBE: TDBEdit
+              Left = 220
+              Top = 295
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 8
+            end
+            object Home_telephone_DBE: TDBEdit
+              Left = 220
+              Top = 330
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 9
+            end
+            object Mobile_telephone_DBE: TDBEdit
+              Left = 220
+              Top = 365
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 10
+            end
+            object Button1: TButton
+              Left = 291
+              Top = 453
+              Width = 73
+              Height = 41
+              Caption = 'Button1'
+              TabOrder = 11
+              OnClick = Button1Click
+            end
+            object Button2: TButton
+              Left = 123
+              Top = 445
+              Width = 105
+              Height = 33
+              Caption = 'Button2'
+              TabOrder = 12
+            end
+          end
+          object Gadjet_P: TPanel
+            Left = 1
+            Top = 1
+            Width = 408
+            Height = 606
+            Align = alLeft
+            TabOrder = 1
+            object ID_L: TLabel
+              Left = 15
+              Top = 20
+              Width = 33
+              Height = 21
+              Caption = '* ID'
+            end
+            object Login_L: TLabel
+              Left = 15
+              Top = 90
+              Width = 57
+              Height = 21
+              Caption = '* Login'
+            end
+            object Password_L: TLabel
+              Left = 15
+              Top = 125
+              Width = 88
+              Height = 21
+              Caption = '* Password'
+            end
+            object Mail_L: TLabel
+              Left = 15
+              Top = 160
+              Width = 46
+              Height = 21
+              Caption = '* Mail'
+            end
+            object Registration_date_L: TLabel
+              Left = 15
+              Top = 195
+              Width = 139
+              Height = 21
+              Caption = '* Registration date'
+            end
+            object Host_L: TLabel
+              Left = 15
+              Top = 55
+              Width = 71
+              Height = 21
+              Caption = '* Host_L'
+            end
+            object ID_DBE: TDBEdit
+              Left = 176
+              Top = 15
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object Login_DBE: TDBEdit
+              Left = 176
+              Top = 85
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 1
+            end
+            object Password_DBE: TDBEdit
+              Left = 176
+              Top = 120
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 2
+            end
+            object Mail_DBE: TDBEdit
+              Left = 176
+              Top = 155
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 3
+            end
+            object Registration_date_DBE: TDBEdit
+              Left = 176
+              Top = 190
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 4
+            end
+            object Host_DBE: TDBEdit
+              Left = 176
+              Top = 50
+              Width = 220
+              Height = 29
+              DataSource = DataSource
+              TabOrder = 5
+            end
+          end
         end
       end
+    end
+    object Mail_TSh: TTabSheet
+      Caption = #1069#1083#1077#1082#1090#1088#1086#1085#1085#1099#1077' '#1087#1086#1095#1090#1072
+      ImageIndex = 1
+      TabVisible = False
+    end
+    object Mobile_TSh: TTabSheet
+      Caption = #1052#1086#1073#1080#1083#1100#1085#1099#1077' '#1090#1077#1083#1077#1092#1086#1085#1099
+      ImageIndex = 2
+    end
+    object ICloud_TSh: TTabSheet
+      Caption = 'I Cloud '#1089#1077#1088#1074#1080#1089#1099
+      ImageIndex = 3
+    end
+    object PlayMarket_TSh: TTabSheet
+      Caption = 'Play Market '#1089#1077#1088#1074#1080#1089#1099
+      ImageIndex = 4
+    end
+    object Computer_TSh: TTabSheet
+      Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1080' '#1082#1086#1084#1087#1100#1102#1090#1077#1088#1086#1074
+      ImageIndex = 5
+    end
+    object Paycard_TSh: TTabSheet
+      Caption = #1055#1083#1072#1090#1105#1078#1085#1072#1103' '#1089#1080#1089#1090#1077#1084#1072' Paycard'
+      ImageIndex = 6
+    end
+    object Docfile_TSh: TTabSheet
+      Caption = #1047#1072' '#1087#1072#1088#1086#1083#1100#1085#1099#1077' '#1092#1072#1081#1083#1099
+      ImageIndex = 7
     end
   end
   object MainMenu1: TMainMenu
