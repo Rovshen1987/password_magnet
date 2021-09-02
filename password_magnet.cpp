@@ -35,8 +35,47 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
 
  void TPassword_magnet_F::initilisation()
  {
+//   {
+//   ADOQuery->SQL->Clear();
+////   TDate date{"01-01-2021"};
+//   AnsiString  s = "SELECT * FROM TSite WHERE Registration_date BETWEEN #01/01/2017# AND #01/01/2022#";
+////   AnsiString  s = "SELECT * FROM TSite WHERE Registration_date BETWEEN \'"+DateToStr(date)+("\' AND \'")+ DateToStr(date)+"\'";
+//   ADOQuery->SQL->Add(s);
+//   ADOQuery->Active = true;
+//
+//   }
+
+
    this->password_magnet_navigator   = std::make_unique<Navigator>();
    this->password_magnet_site        = std::make_unique<TSite>();
+
+   this->password_SQL_site           = std::make_unique<_SQL>(ADOQuery, DataSource, "TSite", true);
+   this->password_SQL_site->Add("ID");
+   this->password_SQL_site->Add("Host");
+   this->password_SQL_site->Add("Login");
+   this->password_SQL_site->Add("Password");
+   this->password_SQL_site->Add("Mail");
+   this->password_SQL_site->Add("Registration_date");
+   this->password_SQL_site->Add("First_name");
+   this->password_SQL_site->Add("Last_name");
+   this->password_SQL_site->Add("Year_of_birth");
+   this->password_SQL_site->Add("Gender_of_person");
+   this->password_SQL_site->Add("Place_of_birth");
+   this->password_SQL_site->Add("Country");
+   this->password_SQL_site->Add("City");
+   this->password_SQL_site->Add("Address_registration");
+   this->password_SQL_site->Add("Place_of_resindece");
+   this->password_SQL_site->Add("Home_telephone");
+   this->password_SQL_site->Add("Mobile_telephone");
+
+   this->password_SQL_site->Add(std::tuple<AnsiString, int, int, bool, bool>("ID",0,10,true,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Host","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Login","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Password","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Mail","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, TDate, TDate, bool, bool>("Registration_date",TDate("01.01.2010"),
+                                TDate("31.12.2022"),false,true));
+   this->password_SQL_site->order_general();
 
    this->Site_TSh->TabVisible  = false;
    this->visible_TSh(this->Site_TSh);
@@ -311,4 +350,19 @@ void TPassword_magnet_F::visible_TSh(TTabSheet* object)
   }
 
 };
+
+void __fastcall TPassword_magnet_F::DBGridColEnter(TObject *Sender)
+{
+
+Password_magnet_F->Caption = "Delta";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
+{
+AnsiString i = "Dogry";
+AnsiString temp = typeid(i).name();
+Password_magnet_F->Caption = temp;
+}
+//---------------------------------------------------------------------------
 

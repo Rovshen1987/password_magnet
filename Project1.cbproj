@@ -157,6 +157,12 @@
         <None Include="TSite.h">
             <BuildOrder>8</BuildOrder>
         </None>
+        <CppCompile Include="_SQL.cpp">
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <None Include="_SQL.h">
+            <BuildOrder>12</BuildOrder>
+        </None>
         <FormResources Include="password_magnet.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

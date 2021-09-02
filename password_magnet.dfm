@@ -224,6 +224,7 @@ object Password_magnet_F: TPassword_magnet_F
             TitleFont.Height = -19
             TitleFont.Name = 'Times New Roman'
             TitleFont.Style = []
+            OnColEnter = DBGridColEnter
           end
         end
         object DBNavigator: TDBNavigator
@@ -425,9 +426,9 @@ object Password_magnet_F: TPassword_magnet_F
               TabOrder = 10
             end
             object Button1: TButton
-              Left = 291
-              Top = 453
-              Width = 73
+              Left = 211
+              Top = 509
+              Width = 166
               Height = 41
               Caption = 'Button1'
               TabOrder = 11
@@ -440,6 +441,7 @@ object Password_magnet_F: TPassword_magnet_F
               Height = 33
               Caption = 'Button2'
               TabOrder = 12
+              OnClick = Button2Click
             end
           end
           object Gadjet_P: TPanel
@@ -547,7 +549,6 @@ object Password_magnet_F: TPassword_magnet_F
     object Mail_TSh: TTabSheet
       Caption = #1069#1083#1077#1082#1090#1088#1086#1085#1085#1099#1077' '#1087#1086#1095#1090#1072
       ImageIndex = 1
-      TabVisible = False
     end
     object Mobile_TSh: TTabSheet
       Caption = #1052#1086#1073#1080#1083#1100#1085#1099#1077' '#1090#1077#1083#1077#1092#1086#1085#1099
@@ -575,8 +576,8 @@ object Password_magnet_F: TPassword_magnet_F
     end
   end
   object MainMenu1: TMainMenu
-    Left = 232
-    Top = 144
+    Left = 624
+    Top = 168
     object File1: TMenuItem
       Caption = 'File'
       object Open1: TMenuItem
@@ -609,7 +610,9 @@ object Password_magnet_F: TPassword_magnet_F
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'Select *  From TSite')
+      'Select *  From TSite'
+      ''
+      '')
     Left = 884
     Top = 502
   end

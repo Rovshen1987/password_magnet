@@ -23,6 +23,7 @@
 #include <Vcl.Mask.hpp>
 #include "Navigator.h"
 #include "TSite.h"
+#include "_SQL.h"
 #include <memory>
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
@@ -116,6 +117,8 @@ __published:	// IDE-managed Components
 	void __fastcall Exit1Click(TObject *Sender);
 	void __fastcall Mail_NLClick(TObject *Sender);
 	void __fastcall Docfile_NLClick(TObject *Sender);
+	void __fastcall DBGridColEnter(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 	void initilisation();
     void Password_magnet_F_RESIZE();
@@ -124,6 +127,7 @@ public:		// User declarations
 														  //columns_run
 	std::unique_ptr<Navigator> password_magnet_navigator;
 	std::unique_ptr<TSite>     password_magnet_site;
+    std::unique_ptr<_SQL>      password_SQL_site;
 
 
 	void Site_NL_initilisation();
