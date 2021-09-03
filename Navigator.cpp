@@ -90,7 +90,7 @@
 
  void Navigator::object_click(const AnsiString& name_object)
  {
-   this->ged_id_object_inside(this->ged_id_object(name_object));
+   this->get_id_object_inside(this->get_id_object(name_object));
  };
 
  //-----------------------------------------------------------------------------
@@ -145,7 +145,7 @@
 //------------------------------------------------------------------------------
 //---------------------------PRIVATE SECTION------------------------------------
 
- int  Navigator::ged_id_object(const AnsiString& name_object)noexcept
+ int  Navigator::get_id_object(const AnsiString& name_object)noexcept
  {
    int result = 0;
 
@@ -201,7 +201,7 @@
  };
 
  //------------------------------------------------------------------------------
- void Navigator::ged_id_object_inside(const int& set)
+ void Navigator::get_id_object_inside(const int& set)
  {
    switch(set)
  {
@@ -225,6 +225,18 @@
 		   break;
 		  };
 
+  default: {
+		   this->get_id_object_inside_2(set);
+		   }
+ }
+
+ };
+
+ //------------------------------------------------------------------------------
+ void Navigator::get_id_object_inside_2(const int& set)
+ {
+   switch(set)
+ {
   case 5: {
 		   this->PlayMarket_BUTTON();
 		   break;
@@ -333,93 +345,30 @@ void Navigator::All_varrible_false()
 //------------------------------------------------------------------------------
 void Navigator::set_style_ALL()
 {
-  if (this->Site_BOOL == true)
+
+   this->set_style_ALL_inside(this->Site_NL,this->Site_BOOL);
+   this->set_style_ALL_inside(this->Mail_NL,this->Mail_BOOL);
+   this->set_style_ALL_inside(this->Mobile_NL,this->Mobile_BOOL);
+   this->set_style_ALL_inside(this->ICloud_NL,this->ICloud_BOOL);
+   this->set_style_ALL_inside(this->PlayMarket_NL,this->PlayMarket_BOOL);
+   this->set_style_ALL_inside(this->Computer_NL,this->Computer_BOOL);
+   this->set_style_ALL_inside(this->Paycard_NL,this->Paycard_BOOL);
+   this->set_style_ALL_inside(this->Docfile_NL,this->Docfile_BOOL);
+
+};
+
+//------------------------------------------------------------------------------
+void Navigator::set_style_ALL_inside(TLabel* obj, const bool& visible)
+{
+	 if (visible == true)
   {
-   this->Site_NL->Font->Size  = this->true_varrible_int;
-   this->Site_NL->Font->Style = this->Site_NL->Font->Style<<fsUnderline;
+   obj->Font->Size  = this->true_varrible_int;
+   obj->Font->Style = this->Site_NL->Font->Style<<fsUnderline;
   }
   else
   {
-   this->Site_NL->Font->Size  = this->false_varrible_int;
-   this->Site_NL->Font->Style = this->Site_NL->Font->Style>>fsUnderline;
-  };
-
-  if (this->Mail_BOOL == true)
-  {
-   this->Mail_NL->Font->Size  = this->true_varrible_int;
-   this->Mail_NL->Font->Style = this->Mail_NL->Font->Style<<fsUnderline;
-  }
-  else
-  {
-   this->Mail_NL->Font->Size  = this->false_varrible_int;
-   this->Mail_NL->Font->Style = this->Mail_NL->Font->Style>>fsUnderline;
-  };
-
-  if (this->Mobile_BOOL == true)
-  {
-   this->Mobile_NL->Font->Size  = this->true_varrible_int;
-   this->Mobile_NL->Font->Style = this->Mobile_NL->Font->Style<<fsUnderline;
-  }
-  else
-  {
-   this->Mobile_NL->Font->Size  = this->false_varrible_int;
-   this->Mobile_NL->Font->Style = this->Mobile_NL->Font->Style>>fsUnderline;
-  };
-
-  if (this->ICloud_BOOL == true)
-  {
-   this->ICloud_NL->Font->Size  = this->true_varrible_int;
-   this->ICloud_NL->Font->Style = this->ICloud_NL->Font->Style<<fsUnderline;
-  }
-  else
-  {
-   this->ICloud_NL->Font->Size  = this->false_varrible_int;
-   this->ICloud_NL->Font->Style = this->ICloud_NL->Font->Style>>fsUnderline;
-  };
-
-  if (this->PlayMarket_BOOL == true)
-  {
-   this->PlayMarket_NL->Font->Size  = this->true_varrible_int;
-   this->PlayMarket_NL->Font->Style = this->PlayMarket_NL->Font->Style<<fsUnderline;
-  }
-  else
-  {
-   this->PlayMarket_NL->Font->Size  = this->false_varrible_int;
-   this->PlayMarket_NL->Font->Style = this->PlayMarket_NL->Font->Style>>fsUnderline;
-  };
-
-
-  if (this->Computer_BOOL == true)
-  {
-   this->Computer_NL->Font->Size  = this->true_varrible_int;
-   this->Computer_NL->Font->Style = this->Computer_NL->Font->Style<<fsUnderline;
-  }
-  else
-  {
-   this->Computer_NL->Font->Size  = this->false_varrible_int;
-   this->Computer_NL->Font->Style = this->Computer_NL->Font->Style>>fsUnderline;
-  };
-
-  if (Paycard_BOOL == true)
-  {
-   this->Paycard_NL->Font->Size  = this->true_varrible_int;
-   this->Paycard_NL->Font->Style = this->Paycard_NL->Font->Style<<fsUnderline;
-  }
-  else
-  {
-   this->Paycard_NL->Font->Size  = this->false_varrible_int;
-   this->Paycard_NL->Font->Style = this->Paycard_NL->Font->Style>>fsUnderline;
-  };
-
-  if (Docfile_BOOL == true)
-  {
-   this->Docfile_NL->Font->Size  = this->true_varrible_int;
-   this->Docfile_NL->Font->Style = this->Docfile_NL->Font->Style<<fsUnderline;
-  }
-  else
-  {
-   this->Docfile_NL->Font->Size  = this->false_varrible_int;
-   this->Docfile_NL->Font->Style = this->Docfile_NL->Font->Style>>fsUnderline;
+   obj->Font->Size  = this->false_varrible_int;
+   obj->Font->Style = this->Site_NL->Font->Style>>fsUnderline;
   };
 
 };

@@ -50,8 +50,9 @@ private:
 	 bool Paycard_BOOL;
 	 bool Docfile_BOOL;
 
-	 int  ged_id_object(const AnsiString& name_object) noexcept;
-	 void ged_id_object_inside(const int& set);
+	 int  get_id_object(const AnsiString& name_object) noexcept;
+	 void get_id_object_inside(const int& set);
+     void get_id_object_inside_2(const int& set);
 
 	 void Site_BUTTON();
 	 void Mail_BUTTON();
@@ -65,6 +66,7 @@ private:
 	 void All_varrible_false();
 
 	 void set_style_ALL();
+	 void set_style_ALL_inside(TLabel* obj, const bool& visible);
 
 
 };

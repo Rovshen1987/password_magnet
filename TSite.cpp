@@ -195,102 +195,19 @@ bool TSite::get_Active_object_columns_run()
 //------------------------------------------------------------------------------
 bool TSite::get_selected_all_object()
 {
-	 if (this->ADO_query_o == 0)
-	 {
-	  return false;
-	 };
+	 if ((this->ADO_query_o == 0) or (this->DB_grid_o == 0) or (this->ID_DBE == 0) or (this->Host_DBE == 0)
+		 or (this->Login_DBE == 0) or (this->Password_DBE == 0) or (this->Mail_DBE == 0) or (this->Registration_date_DBE == 0)
+		 or (this->First_name_DBE == 0) or (this->Last_name_DBE == 0) or (this->Year_of_birth_DBE == 0) or (this->Gender_of_person_DBE == 0)
+		 or (this->Place_of_birth_DBE == 0) or (this->Country_DBE == 0) or (this->City_DBE == 0) or (this->Address_registration_DBE == 0)
+		 or (this->Place_of_resindece_DBE == 0) or (this->Home_telephone_DBE == 0) or (this->Mobile_telephone_DBE == 0))
+	  {
+		 return false;
+	  }
+	  else
+	  {
+        return true;
+	  }
 
-	 if (this->DB_grid_o == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->ID_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Host_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Login_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Password_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Mail_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Registration_date_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->First_name_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Last_name_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Year_of_birth_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Gender_of_person_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Place_of_birth_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Country_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->City_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Address_registration_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Place_of_resindece_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Home_telephone_DBE == 0)
-	 {
-	  return false;
-	 };
-
-	 if (this->Mobile_telephone_DBE == 0)
-	 {
-	  return false;
-	 };
-
-     return true;
 };
 
 //******************************************************************************
