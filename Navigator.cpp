@@ -215,16 +215,6 @@
 		   break;
 		  };
 
-  case 3: {
-		   this->Mobile_BUTTON();
-		   break;
-		  };
-
-  case 4: {
-		   this->ICloud_BUTTON();
-		   break;
-		  };
-
   default: {
 		   this->get_id_object_inside_2(set);
 		   }
@@ -237,10 +227,33 @@
  {
    switch(set)
  {
+  case 3: {
+		   this->Mobile_BUTTON();
+		   break;
+		  };
+
+  case 4: {
+		   this->ICloud_BUTTON();
+		   break;
+		  };
   case 5: {
 		   this->PlayMarket_BUTTON();
 		   break;
 		  };
+
+
+  default: {
+		   this->get_id_object_inside_3(set);
+		   }
+ }
+
+ };
+
+ //------------------------------------------------------------------------------
+ void Navigator::get_id_object_inside_3(const int& set)
+ {
+   switch(set)
+ {
 
   case 6: {
 		   this->Computer_BUTTON();

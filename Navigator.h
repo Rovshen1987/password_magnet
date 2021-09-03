@@ -52,7 +52,8 @@ private:
 
 	 int  get_id_object(const AnsiString& name_object) noexcept;
 	 void get_id_object_inside(const int& set);
-     void get_id_object_inside_2(const int& set);
+	 void get_id_object_inside_2(const int& set);
+     void get_id_object_inside_3(const int& set);
 
 	 void Site_BUTTON();
 	 void Mail_BUTTON();
