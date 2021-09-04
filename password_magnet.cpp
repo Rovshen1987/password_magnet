@@ -48,34 +48,10 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
 
    this->password_magnet_navigator   = std::make_unique<Navigator>();
    this->password_magnet_site        = std::make_unique<TSite>();
+   this->password_SQL_site           = std::make_unique<_SQL>(ADOQuery_site, "TSite", true);
+   this->password_Resize_site        = std::make_unique<_Resize>(220,440,450);
 
-   this->password_SQL_site           = std::make_unique<_SQL>(ADOQuery, DataSource, "TSite", true);
-   this->password_SQL_site->Add("ID");
-   this->password_SQL_site->Add("Host");
-   this->password_SQL_site->Add("Login");
-   this->password_SQL_site->Add("Password");
-   this->password_SQL_site->Add("Mail");
-   this->password_SQL_site->Add("Registration_date");
-   this->password_SQL_site->Add("First_name");
-   this->password_SQL_site->Add("Last_name");
-   this->password_SQL_site->Add("Year_of_birth");
-   this->password_SQL_site->Add("Gender_of_person");
-   this->password_SQL_site->Add("Place_of_birth");
-   this->password_SQL_site->Add("Country");
-   this->password_SQL_site->Add("City");
-   this->password_SQL_site->Add("Address_registration");
-   this->password_SQL_site->Add("Place_of_resindece");
-   this->password_SQL_site->Add("Home_telephone");
-   this->password_SQL_site->Add("Mobile_telephone");
 
-   this->password_SQL_site->Add(std::tuple<AnsiString, int, int, bool, bool>("ID",0,10,true,false));
-   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Host","*",false,false));
-   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Login","*",false,false));
-   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Password","*",false,false));
-   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Mail","*",false,false));
-   this->password_SQL_site->Add(std::tuple<AnsiString, TDate, TDate, bool, bool>("Registration_date",TDate("01.01.2010"),
-                                TDate("31.12.2022"),false,true));
-   this->password_SQL_site->order_general();
 
    this->Site_TSh->TabVisible  = false;
    this->visible_TSh(this->Site_TSh);
@@ -98,11 +74,7 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
    Password_magnet_F->Width = Password_magnet_F->Constraints->MinWidth;
  };
 
- /*	 TLabel* Mobile_L;
-	 TLabel* ICloud_L;
-	 TLabel* PlayMarker_L;
-	 TLabel* Computer_L;
-	 TLabel* Pay_card_L;*/
+
 void __fastcall TPassword_magnet_F::FormCreate(TObject *Sender)
 {
 this->initilisation();
@@ -179,10 +151,12 @@ void TPassword_magnet_F::Password_magnet_F_RESIZE()
 
 void __fastcall TPassword_magnet_F::FormResize(TObject *Sender)
 {
-Password_magnet_F_RESIZE();
+//Password_magnet_F_RESIZE();
+//
+//Password_magnet_F->Caption = AnsiString("P1 = ")+ Password_magnet_F->Gadjet_P->Width +
+//							 AnsiString("; P2 = ")+ Password_magnet_F->Person_P->Width;
 
-Password_magnet_F->Caption = AnsiString("P1 = ")+ Password_magnet_F->Gadjet_P->Width +
-							 AnsiString("; P2 = ")+ Password_magnet_F->Person_P->Width;
+
 }
 //---------------------------------------------------------------------------
 
@@ -199,7 +173,7 @@ void TPassword_magnet_F::Site_NL_initilisation()
 if ((this->password_magnet_site->get_Active_object() == true) and
    (this->password_magnet_site->get_selected_all_object() == false))
   {
-   this->password_magnet_site->set_ADO_query_o(this->ADOQuery);
+   this->password_magnet_site->set_ADO_query_o(this->ADOQuery_site);
    this->password_magnet_site->set_DB_grid_o(this->DBGrid);
    this->password_magnet_site->set_ID_DBE(this->ID_DBE);
    this->password_magnet_site->set_Host_DBE(this->Host_DBE);
@@ -218,7 +192,9 @@ if ((this->password_magnet_site->get_Active_object() == true) and
    this->password_magnet_site->set_Place_of_resindece_DBE(this->Place_of_resindece_DBE);
    this->password_magnet_site->set_Home_telephone_DBE(this->Home_telephone_DBE);
    this->password_magnet_site->set_Mobile_telephone_DBE(this->Mobile_telephone_DBE);
-
+   this->Site_SQL_initilisation();
+   this->Site_Resize_initilisation();
+   this->password_Resize_site->Connect();
   };
 
   if (this->password_magnet_site->get_Active_object_columns_run() == false)
@@ -283,53 +259,7 @@ void __fastcall TPassword_magnet_F::Docfile_NLClick(TObject *Sender)
 this->password_magnet_navigator->object_click(this->Docfile_NL->GetNamePath());
 this->visible_TSh(this->Docfile_TSh);
 }
-//---------------------------------------------------------------------------
 
-void TPassword_magnet_F::_Resize_initilisation()
-{
- int _navigator_int = 0;
-
- if (this->password_magnet_navigator->get_Site_BOOL() == true)
- {
- _navigator_int = 1; //Site
- };
-
- if (this->password_magnet_navigator->get_Mail_BOOL() == true)
- {
- _navigator_int = 2; //Mail
- };
-
- if (this->password_magnet_navigator->get_Mobile_BOOL() == true)
- {
- _navigator_int = 3; //Mobile
- };
-
- if (this->password_magnet_navigator->get_ICloud_BOOL() == true)
- {
- _navigator_int = 4; //ICloud
- };
-
- if (this->password_magnet_navigator->get_PlayMarket_BOOL() == true)
- {
- _navigator_int = 5; //PlayMarket
- };
-
- if (this->password_magnet_navigator->get_Computer_BOOL() == true)
- {
- _navigator_int = 6; //Computer
- };
-
- if (this->password_magnet_navigator->get_Paycard_BOOL() == true)
- {
- _navigator_int = 7; //Paycard
- };
-
- if (this->password_magnet_navigator->get_Docfile_BOOL() == true)
- {
- _navigator_int = 8; //Docfile
- };
-
-};
 
 //---------------------------------------------------------------------------
 void TPassword_magnet_F::visible_TSh(TTabSheet* object)
@@ -360,9 +290,73 @@ Password_magnet_F->Caption = "Delta";
 
 void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
 {
-AnsiString i = "Dogry";
-AnsiString temp = typeid(i).name();
-Password_magnet_F->Caption = temp;
+	if (this->password_Resize_site->get_active()== true)
+	{
+	 this->password_Resize_site->Automatic(this->Gadjet_P->Width);
+	}
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TPassword_magnet_F::DBGridTitleClick(TColumn *Column)
+{
+Password_magnet_F->password_SQL_site->Sort_field_run(Column->FieldName);
+}
+//---------------------------------------------------------------------------
+ void TPassword_magnet_F::Site_SQL_initilisation()
+ {
+   this->password_SQL_site->Add("ID");
+   this->password_SQL_site->Add("Host");
+   this->password_SQL_site->Add("Login");
+   this->password_SQL_site->Add("Password");
+   this->password_SQL_site->Add("Mail");
+   this->password_SQL_site->Add("Registration_date");
+   this->password_SQL_site->Add("First_name");
+   this->password_SQL_site->Add("Last_name");
+   this->password_SQL_site->Add("Year_of_birth");
+   this->password_SQL_site->Add("Gender_of_person");
+   this->password_SQL_site->Add("Place_of_birth");
+   this->password_SQL_site->Add("Country");
+   this->password_SQL_site->Add("City");
+   this->password_SQL_site->Add("Address_registration");
+   this->password_SQL_site->Add("Place_of_resindece");
+   this->password_SQL_site->Add("Home_telephone");
+   this->password_SQL_site->Add("Mobile_telephone");
+
+   this->password_SQL_site->Add(std::tuple<AnsiString, int, int, bool, bool>("ID",0,10,true,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Host","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Login","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Password","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Mail","*",false,false));
+   this->password_SQL_site->Add(std::tuple<AnsiString, TDate, TDate, bool, bool>("Registration_date",TDate("01.01.2010"),
+								TDate("31.12.2022"),false,true));
+   this->password_SQL_site->Order_general();
+ };
+
+ void TPassword_magnet_F::Site_Resize_initilisation()
+ {
+   this->password_Resize_site->Add(this->ID_DBE);
+   this->password_Resize_site->Add(this->Host_DBE);
+   this->password_Resize_site->Add(this->Login_DBE);
+   this->password_Resize_site->Add(this->Password_DBE);
+   this->password_Resize_site->Add(this->Mail_DBE);
+   this->password_Resize_site->Add(this->Registration_date_DBE);
+   this->password_Resize_site->Add(this->First_name_DBE);
+   this->password_Resize_site->Add(this->Last_name_DBE);
+   this->password_Resize_site->Add(this->Year_of_birth_DBE);
+   this->password_Resize_site->Add(this->Gender_of_person_DBE);
+   this->password_Resize_site->Add(this->Place_of_birth_DBE);
+   this->password_Resize_site->Add(this->Country_DBE);
+   this->password_Resize_site->Add(this->City_DBE);
+   this->password_Resize_site->Add(this->Address_registration_DBE);
+   this->password_Resize_site->Add(this->Place_of_resindece_DBE);
+   this->password_Resize_site->Add(this->Home_telephone_DBE);
+   this->password_Resize_site->Add(this->Mobile_telephone_DBE);
+ };
+
+
+
+
+
+
+
 

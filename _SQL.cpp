@@ -1,13 +1,12 @@
 #include "_SQL.h"
 
 //---------------------------------Constructor---------------------------------
-_SQL::_SQL(TADOQuery* ADOQuery, TDataSource* DataSource, const AnsiString& Table_name, const bool& Sort_up)
+_SQL::_SQL(TADOQuery* ADOQuery, const AnsiString& Table_name, const bool& Sort_up)
 {
 	this->Field          = std::make_unique<std::vector<AnsiString>>();
 	this->Temp_last_sql  = std::make_unique<std::vector<AnsiString>>();
 
 	this->ADOQuery        = ADOQuery;
-	this->DataSource      = DataSource;
 	this->Table_name      = Table_name;
 	this->Sort_up         = Sort_up;
 	this->_SQL_command    = "";
@@ -19,11 +18,9 @@ _SQL::_SQL(TADOQuery* ADOQuery, TDataSource* DataSource, const AnsiString& Table
 _SQL::~_SQL()
 {
 	this->ADOQuery   = 0;
-	this->DataSource = 0;
     this->Field->clear();
 
 	delete this->ADOQuery;
-	delete this->DataSource;
 
 };
 						   //PUBLIC Section
@@ -136,9 +133,39 @@ void _SQL::Set_Sort_field(const bool& Sort_up)
 };
 
 //------------------------------------------------------------------------------
+void _SQL::Order_general()
+{
+  this->order_part_one();
+  this->order_part_ORDER_BY();
+  this->Sql_text_rewrite();
+
+};
+
+void _SQL::Order_clear()
+{
+  this->Temp_last_sql->clear();
+};
+
+void _SQL::Sort_field_run(const AnsiString& Field)
+{
+   if (this->Sort_field == Field)
+   {
+	this->Sort_up = this->swap_places(this->Sort_up);
+   }
+   else
+   {
+	this->Sort_field = Field;
+	this->Sort_up    = true;
+   };
+
+   this->Temp_last_sql->pop_back();
+   this->order_part_ORDER_BY();
+   this->Sql_text_rewrite();
+};
+						   //PRIVATE Section
+//------------------------------------------------------------------------------
 bool _SQL::check_tuple_string(const AnsiString& value)
 {
-
   bool temp = false;
   for ( std::vector<AnsiString>::iterator i = this->Field->begin(); i != this->Field->end(); i++)
   {
@@ -160,31 +187,7 @@ bool _SQL::check_tuple_string(const AnsiString& value)
   };
 
   return temp;
-
 };
-
-//------------------------------------------------------------------------------
-void _SQL::order_general()
-{
-  this->order_part_one();
-  this->order_part_ORDER_BY();
-  this->ADOQuery->SQL->Clear();
-
-  for (auto i = this->Temp_last_sql->begin(); i != this->Temp_last_sql->end(); i++)
-  {
-   this->ADOQuery->SQL->Add(*i);
-  }
-  this->ADOQuery->Active = true;
-
-
-};
-
-void _SQL::order_clear()
-{
-  this->Temp_last_sql->clear();
-};
-
-						   //PRIVATE Section
 //------------------------------------------------------------------------------
 void _SQL::order_part_one()
 {
@@ -291,5 +294,29 @@ AnsiString& _SQL::past_slesh_for_date(AnsiString& obj)
 
   return obj = temp.c_str();
 
+};
+
+bool& _SQL::swap_places(bool& value)
+{
+	if (value == true)
+	{
+	 value = false;
+	}
+	else
+	{
+	 value = true;
+	};
+
+	return value;
+};
+
+void _SQL::Sql_text_rewrite()
+{
+   this->ADOQuery->SQL->Clear();
+  for (auto i = this->Temp_last_sql->begin(); i != this->Temp_last_sql->end(); i++)
+  {
+   this->ADOQuery->SQL->Add(*i);
+  }
+  this->ADOQuery->Active = true;
 };
 

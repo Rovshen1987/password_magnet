@@ -157,6 +157,12 @@
         <None Include="TSite.h">
             <BuildOrder>8</BuildOrder>
         </None>
+        <CppCompile Include="_Resize.cpp">
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <None Include="_Resize.h">
+            <BuildOrder>14</BuildOrder>
+        </None>
         <CppCompile Include="_SQL.cpp">
             <BuildOrder>13</BuildOrder>
         </CppCompile>

@@ -17,14 +17,15 @@
 #include <Vcl.Grids.hpp>
 #include <Vcl.Menus.hpp>
 #include <Vcl.ToolWin.hpp>
-#include "direct_r.h"
 #include <Data.Win.ADODB.hpp>
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.Mask.hpp>
 #include "Navigator.h"
+#include <memory>
 #include "TSite.h"
 #include "_SQL.h"
-#include <memory>
+#include "direct_r.h"
+#include "_Resize.h"
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
 {
@@ -40,8 +41,8 @@ __published:	// IDE-managed Components
 	TSplitter *Splitter1;
 	TSplitter *Splitter3;
 	TADOConnection *ADOConnection;
-	TADOQuery *ADOQuery;
-	TDataSource *DataSource;
+	TADOQuery *ADOQuery_site;
+	TDataSource *DataSource_site;
 	TLabel *Site_NL;
 	TLabel *Mobile_NL;
 	TLabel *Computer_NL;
@@ -119,18 +120,14 @@ __published:	// IDE-managed Components
 	void __fastcall Docfile_NLClick(TObject *Sender);
 	void __fastcall DBGridColEnter(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall DBGridTitleClick(TColumn *Column);
 private:	// User declarations
 	void initilisation();
-    void Password_magnet_F_RESIZE();
-public:		// User declarations
-	__fastcall TPassword_magnet_F(TComponent* Owner);
-														  //columns_run
-	std::unique_ptr<Navigator> password_magnet_navigator;
-	std::unique_ptr<TSite>     password_magnet_site;
-    std::unique_ptr<_SQL>      password_SQL_site;
-
+	void Password_magnet_F_RESIZE();
 
 	void Site_NL_initilisation();
+	void Site_SQL_initilisation();
+	void Site_Resize_initilisation();
 	void Mail_NL_initilisation();
 	void Mobile_NL_initilisation();
 	void ICloud_NL_initilisation();
@@ -139,9 +136,20 @@ public:		// User declarations
 	void Paycard_NL_initilisation();
 	void Docfile_NL_initilisation();
 
+public:		// User declarations
+	__fastcall TPassword_magnet_F(TComponent* Owner);
+														  //columns_run
+	std::unique_ptr<Navigator> password_magnet_navigator;
+	std::unique_ptr<TSite>     password_magnet_site;
+	std::unique_ptr<_SQL>      password_SQL_site;
+    std::unique_ptr<_Resize>   password_Resize_site;
+
+
+
+
     void visible_TSh(TTabSheet* object);
 
-	void _Resize_initilisation();
+
 
 
 };

@@ -217,7 +217,7 @@ object Password_magnet_F: TPassword_magnet_F
             Width = 919
             Height = 182
             Align = alClient
-            DataSource = DataSource
+            DataSource = DataSource_site
             TabOrder = 0
             TitleFont.Charset = DEFAULT_CHARSET
             TitleFont.Color = clWindowText
@@ -225,6 +225,7 @@ object Password_magnet_F: TPassword_magnet_F
             TitleFont.Name = 'Times New Roman'
             TitleFont.Style = []
             OnColEnter = DBGridColEnter
+            OnTitleClick = DBGridTitleClick
           end
         end
         object DBNavigator: TDBNavigator
@@ -233,7 +234,7 @@ object Password_magnet_F: TPassword_magnet_F
           Width = 921
           Height = 45
           Cursor = crHandPoint
-          DataSource = DataSource
+          DataSource = DataSource_site
           Align = alTop
           TabOrder = 1
         end
@@ -245,7 +246,7 @@ object Password_magnet_F: TPassword_magnet_F
           Align = alClient
           TabOrder = 2
           object Splitter4: TSplitter
-            Left = 409
+            Left = 901
             Top = 1
             Width = 0
             Height = 606
@@ -253,9 +254,9 @@ object Password_magnet_F: TPassword_magnet_F
             ExplicitHeight = 534
           end
           object Person_P: TPanel
-            Left = 409
+            Left = 451
             Top = 1
-            Width = 468
+            Width = 450
             Height = 606
             Align = alLeft
             TabOrder = 0
@@ -338,91 +339,91 @@ object Password_magnet_F: TPassword_magnet_F
               Caption = 'Mobile telephone'
             end
             object First_name_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 15
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 0
             end
             object Last_name_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 50
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 1
             end
             object Year_of_birth_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 85
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 2
             end
             object Gender_of_person_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 120
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 3
             end
             object Place_of_birth_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 155
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 4
             end
             object Country_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 190
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 5
             end
             object City_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 225
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 6
             end
             object Address_registration_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 260
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 7
             end
             object Place_of_resindece_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 295
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 8
             end
             object Home_telephone_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 330
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 9
             end
             object Mobile_telephone_DBE: TDBEdit
-              Left = 220
+              Left = 180
               Top = 365
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 10
             end
             object Button1: TButton
@@ -447,7 +448,7 @@ object Password_magnet_F: TPassword_magnet_F
           object Gadjet_P: TPanel
             Left = 1
             Top = 1
-            Width = 408
+            Width = 450
             Height = 606
             Align = alLeft
             TabOrder = 1
@@ -494,52 +495,52 @@ object Password_magnet_F: TPassword_magnet_F
               Caption = '* Host_L'
             end
             object ID_DBE: TDBEdit
-              Left = 176
+              Left = 180
               Top = 15
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               ReadOnly = True
               TabOrder = 0
             end
             object Login_DBE: TDBEdit
-              Left = 176
+              Left = 180
               Top = 85
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 1
             end
             object Password_DBE: TDBEdit
-              Left = 176
+              Left = 180
               Top = 120
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 2
             end
             object Mail_DBE: TDBEdit
-              Left = 176
+              Left = 180
               Top = 155
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 3
             end
             object Registration_date_DBE: TDBEdit
-              Left = 176
+              Left = 180
               Top = 190
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 4
             end
             object Host_DBE: TDBEdit
-              Left = 176
+              Left = 180
               Top = 50
               Width = 220
               Height = 29
-              DataSource = DataSource
+              DataSource = DataSource_site
               TabOrder = 5
             end
           end
@@ -604,7 +605,7 @@ object Password_magnet_F: TPassword_magnet_F
     Left = 492
     Top = 502
   end
-  object ADOQuery: TADOQuery
+  object ADOQuery_site: TADOQuery
     Active = True
     Connection = ADOConnection
     CursorType = ctStatic
@@ -616,8 +617,8 @@ object Password_magnet_F: TPassword_magnet_F
     Left = 884
     Top = 502
   end
-  object DataSource: TDataSource
-    DataSet = ADOQuery
+  object DataSource_site: TDataSource
+    DataSet = ADOQuery_site
     Left = 892
     Top = 278
   end

@@ -7,7 +7,7 @@ class _SQL
 {
 public:
 		_SQL() = delete;
-		_SQL(TADOQuery* ADOQuery, TDataSource* DataSource, const AnsiString& Table_name, const bool& Sort_up = true);
+		_SQL(TADOQuery* ADOQuery, const AnsiString& Table_name, const bool& Sort_up = true);
 		~_SQL();
 
 		void Add(const AnsiString& field);
@@ -25,15 +25,16 @@ public:
 
 		void Set_Sort_field(const bool& Sort_up);
 
-		void order_general();
+		void Order_general();
 
-        void order_clear();
+		void Order_clear();
+
+		void Sort_field_run(const AnsiString& Field);
 
 
 private:
 //Varrible
 		TADOQuery*               								ADOQuery;
-		TDataSource*             								DataSource;
 		std::unique_ptr<std::vector<AnsiString>>  				Field;
 		AnsiString               								Table_name;
 		AnsiString               								Sort_field;
@@ -55,6 +56,9 @@ private:
 		std::string& check_normal_char(std::string& obj, const char& value, const char& past);
 		AnsiString& check_normal_AnsiString(AnsiString& obj, const char& value, const char& past);
 		AnsiString& past_slesh_for_date(AnsiString& obj);
+
+		bool& swap_places(bool& value);
+		void Sql_text_rewrite();
 
 
 
