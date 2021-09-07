@@ -60,6 +60,26 @@ __published:	// IDE-managed Components
 	TDBNavigator *DBNavigator;
 	TPanel *Date_navigator_P;
 	TSplitter *Splitter4;
+	TPanel *Gadjet_P;
+	TLabel *ID_L;
+	TLabel *Login_L;
+	TLabel *Password_L;
+	TLabel *Mail_L;
+	TLabel *Registration_date_L;
+	TLabel *Host_L;
+	TDBEdit *ID_DBE;
+	TDBEdit *Login_DBE;
+	TDBEdit *Password_DBE;
+	TDBEdit *Mail_DBE;
+	TDBEdit *Registration_date_DBE;
+	TDBEdit *Host_DBE;
+	TTabSheet *Mail_TSh;
+	TTabSheet *Mobile_TSh;
+	TTabSheet *ICloud_TSh;
+	TTabSheet *PlayMarket_TSh;
+	TTabSheet *Computer_TSh;
+	TTabSheet *Paycard_TSh;
+	TTabSheet *Docfile_TSh;
 	TPanel *Person_P;
 	TLabel *First_name_L;
 	TLabel *Last_name_L;
@@ -85,26 +105,6 @@ __published:	// IDE-managed Components
 	TDBEdit *Mobile_telephone_DBE;
 	TButton *Button1;
 	TButton *Button2;
-	TPanel *Gadjet_P;
-	TLabel *ID_L;
-	TLabel *Login_L;
-	TLabel *Password_L;
-	TLabel *Mail_L;
-	TLabel *Registration_date_L;
-	TLabel *Host_L;
-	TDBEdit *ID_DBE;
-	TDBEdit *Login_DBE;
-	TDBEdit *Password_DBE;
-	TDBEdit *Mail_DBE;
-	TDBEdit *Registration_date_DBE;
-	TDBEdit *Host_DBE;
-	TTabSheet *Mail_TSh;
-	TTabSheet *Mobile_TSh;
-	TTabSheet *ICloud_TSh;
-	TTabSheet *PlayMarket_TSh;
-	TTabSheet *Computer_TSh;
-	TTabSheet *Paycard_TSh;
-	TTabSheet *Docfile_TSh;
 	void __fastcall EditCopy1Execute(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -119,8 +119,8 @@ __published:	// IDE-managed Components
 	void __fastcall Mail_NLClick(TObject *Sender);
 	void __fastcall Docfile_NLClick(TObject *Sender);
 	void __fastcall DBGridColEnter(TObject *Sender);
-	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall DBGridTitleClick(TColumn *Column);
+
 private:	// User declarations
 	void initilisation();
 	void Password_magnet_F_RESIZE();
@@ -136,6 +136,8 @@ private:	// User declarations
 	void Paycard_NL_initilisation();
 	void Docfile_NL_initilisation();
 
+
+
 public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);
 														  //columns_run
@@ -147,7 +149,7 @@ public:		// User declarations
 
 
 
-    void visible_TSh(TTabSheet* object);
+	void visible_TSh(TTabSheet* object);
 
 
 

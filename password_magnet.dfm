@@ -6,7 +6,7 @@ object Password_magnet_F: TPassword_magnet_F
   ClientWidth = 1071
   Color = clBtnFace
   Constraints.MinHeight = 790
-  Constraints.MinWidth = 1040
+  Constraints.MinWidth = 1087
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -19
@@ -20,9 +20,10 @@ object Password_magnet_F: TPassword_magnet_F
   PixelsPerInch = 96
   TextHeight = 21
   object Splitter1: TSplitter
-    Left = 137
+    Left = 150
     Top = 46
     Height = 878
+    ExplicitLeft = 137
     ExplicitTop = 44
     ExplicitHeight = 405
   end
@@ -53,7 +54,7 @@ object Password_magnet_F: TPassword_magnet_F
   object Navigator_P: TPanel
     Left = 0
     Top = 46
-    Width = 137
+    Width = 150
     Height = 878
     Align = alLeft
     TabOrder = 2
@@ -179,9 +180,9 @@ object Password_magnet_F: TPassword_magnet_F
     end
   end
   object Control_TSh: TPageControl
-    Left = 140
+    Left = 153
     Top = 46
-    Width = 931
+    Width = 918
     Height = 878
     ActivePage = Site_TSh
     Align = alClient
@@ -191,14 +192,14 @@ object Password_magnet_F: TPassword_magnet_F
       object Client_P: TPanel
         Left = 0
         Top = 0
-        Width = 923
+        Width = 910
         Height = 842
         Align = alClient
         TabOrder = 0
         object Splitter2: TSplitter
           Left = 1
           Top = 185
-          Width = 921
+          Width = 908
           Height = 3
           Cursor = crVSplit
           Align = alTop
@@ -207,14 +208,14 @@ object Password_magnet_F: TPassword_magnet_F
         object DBGrid_P: TPanel
           Left = 1
           Top = 1
-          Width = 921
+          Width = 908
           Height = 184
           Align = alTop
           TabOrder = 0
           object DBGrid: TDBGrid
             Left = 1
             Top = 1
-            Width = 919
+            Width = 906
             Height = 182
             Align = alClient
             DataSource = DataSource_site
@@ -231,7 +232,7 @@ object Password_magnet_F: TPassword_magnet_F
         object DBNavigator: TDBNavigator
           Left = 1
           Top = 188
-          Width = 921
+          Width = 908
           Height = 45
           Cursor = crHandPoint
           DataSource = DataSource_site
@@ -241,25 +242,124 @@ object Password_magnet_F: TPassword_magnet_F
         object Date_navigator_P: TPanel
           Left = 1
           Top = 233
-          Width = 921
+          Width = 908
           Height = 608
           Align = alClient
           TabOrder = 2
           object Splitter4: TSplitter
-            Left = 901
-            Top = 1
-            Width = 0
-            Height = 606
-            ExplicitLeft = 421
-            ExplicitHeight = 534
-          end
-          object Person_P: TPanel
             Left = 451
+            Top = 1
+            Width = 6
+            Height = 606
+          end
+          object Gadjet_P: TPanel
+            Left = 1
             Top = 1
             Width = 450
             Height = 606
             Align = alLeft
+            BorderStyle = bsSingle
             TabOrder = 0
+            object ID_L: TLabel
+              Left = 15
+              Top = 20
+              Width = 33
+              Height = 21
+              Caption = '* ID'
+            end
+            object Login_L: TLabel
+              Left = 15
+              Top = 90
+              Width = 57
+              Height = 21
+              Caption = '* Login'
+            end
+            object Password_L: TLabel
+              Left = 15
+              Top = 125
+              Width = 88
+              Height = 21
+              Caption = '* Password'
+            end
+            object Mail_L: TLabel
+              Left = 15
+              Top = 160
+              Width = 46
+              Height = 21
+              Caption = '* Mail'
+            end
+            object Registration_date_L: TLabel
+              Left = 15
+              Top = 195
+              Width = 139
+              Height = 21
+              Caption = '* Registration date'
+            end
+            object Host_L: TLabel
+              Left = 15
+              Top = 55
+              Width = 71
+              Height = 21
+              Caption = '* Host_L'
+            end
+            object ID_DBE: TDBEdit
+              Left = 180
+              Top = 15
+              Width = 220
+              Height = 29
+              DataSource = DataSource_site
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object Login_DBE: TDBEdit
+              Left = 180
+              Top = 85
+              Width = 220
+              Height = 29
+              DataSource = DataSource_site
+              TabOrder = 1
+            end
+            object Password_DBE: TDBEdit
+              Left = 180
+              Top = 120
+              Width = 220
+              Height = 29
+              DataSource = DataSource_site
+              TabOrder = 2
+            end
+            object Mail_DBE: TDBEdit
+              Left = 180
+              Top = 155
+              Width = 220
+              Height = 29
+              DataSource = DataSource_site
+              TabOrder = 3
+            end
+            object Registration_date_DBE: TDBEdit
+              Left = 180
+              Top = 190
+              Width = 220
+              Height = 29
+              DataSource = DataSource_site
+              TabOrder = 4
+            end
+            object Host_DBE: TDBEdit
+              Left = 180
+              Top = 50
+              Width = 220
+              Height = 29
+              DataSource = DataSource_site
+              TabOrder = 5
+            end
+          end
+          object Person_P: TPanel
+            Left = 457
+            Top = 1
+            Width = 450
+            Height = 606
+            Align = alClient
+            BorderStyle = bsSingle
+            TabOrder = 1
             object First_name_L: TLabel
               Left = 20
               Top = 20
@@ -442,106 +542,6 @@ object Password_magnet_F: TPassword_magnet_F
               Height = 33
               Caption = 'Button2'
               TabOrder = 12
-              OnClick = Button2Click
-            end
-          end
-          object Gadjet_P: TPanel
-            Left = 1
-            Top = 1
-            Width = 450
-            Height = 606
-            Align = alLeft
-            TabOrder = 1
-            object ID_L: TLabel
-              Left = 15
-              Top = 20
-              Width = 33
-              Height = 21
-              Caption = '* ID'
-            end
-            object Login_L: TLabel
-              Left = 15
-              Top = 90
-              Width = 57
-              Height = 21
-              Caption = '* Login'
-            end
-            object Password_L: TLabel
-              Left = 15
-              Top = 125
-              Width = 88
-              Height = 21
-              Caption = '* Password'
-            end
-            object Mail_L: TLabel
-              Left = 15
-              Top = 160
-              Width = 46
-              Height = 21
-              Caption = '* Mail'
-            end
-            object Registration_date_L: TLabel
-              Left = 15
-              Top = 195
-              Width = 139
-              Height = 21
-              Caption = '* Registration date'
-            end
-            object Host_L: TLabel
-              Left = 15
-              Top = 55
-              Width = 71
-              Height = 21
-              Caption = '* Host_L'
-            end
-            object ID_DBE: TDBEdit
-              Left = 180
-              Top = 15
-              Width = 220
-              Height = 29
-              DataSource = DataSource_site
-              ReadOnly = True
-              TabOrder = 0
-            end
-            object Login_DBE: TDBEdit
-              Left = 180
-              Top = 85
-              Width = 220
-              Height = 29
-              DataSource = DataSource_site
-              TabOrder = 1
-            end
-            object Password_DBE: TDBEdit
-              Left = 180
-              Top = 120
-              Width = 220
-              Height = 29
-              DataSource = DataSource_site
-              TabOrder = 2
-            end
-            object Mail_DBE: TDBEdit
-              Left = 180
-              Top = 155
-              Width = 220
-              Height = 29
-              DataSource = DataSource_site
-              TabOrder = 3
-            end
-            object Registration_date_DBE: TDBEdit
-              Left = 180
-              Top = 190
-              Width = 220
-              Height = 29
-              DataSource = DataSource_site
-              TabOrder = 4
-            end
-            object Host_DBE: TDBEdit
-              Left = 180
-              Top = 50
-              Width = 220
-              Height = 29
-              DataSource = DataSource_site
-              TabOrder = 5
             end
           end
         end
@@ -602,8 +602,8 @@ object Password_magnet_F: TPassword_magnet_F
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 492
-    Top = 502
+    Left = 460
+    Top = 646
   end
   object ADOQuery_site: TADOQuery
     Active = True

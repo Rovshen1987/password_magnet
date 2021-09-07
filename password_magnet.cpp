@@ -49,7 +49,7 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
    this->password_magnet_navigator   = std::make_unique<Navigator>();
    this->password_magnet_site        = std::make_unique<TSite>();
    this->password_SQL_site           = std::make_unique<_SQL>(ADOQuery_site, "TSite", true);
-   this->password_Resize_site        = std::make_unique<_Resize>(220,440,450);
+   this->password_Resize_site        = std::make_unique<_Resize>(220,440,908, this->Gadjet_P);
 
 
 
@@ -151,11 +151,17 @@ void TPassword_magnet_F::Password_magnet_F_RESIZE()
 
 void __fastcall TPassword_magnet_F::FormResize(TObject *Sender)
 {
-//Password_magnet_F_RESIZE();
-//
-//Password_magnet_F->Caption = AnsiString("P1 = ")+ Password_magnet_F->Gadjet_P->Width +
-//							 AnsiString("; P2 = ")+ Password_magnet_F->Person_P->Width;
+  int fwidth = Password_magnet_F->Width;
 
+  if (Control_TSh->ActivePage == Site_TSh)
+  {
+  int pwidth = 0;
+  pwidth = (fwidth-153)/2;
+  Gadjet_P->Width = pwidth;
+  password_Resize_site->Automatic(pwidth);
+  };
+
+  Password_magnet_F->Caption = ID_DBE->Width;
 
 }
 //---------------------------------------------------------------------------
@@ -288,14 +294,6 @@ Password_magnet_F->Caption = "Delta";
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
-{
-	if (this->password_Resize_site->get_active()== true)
-	{
-	 this->password_Resize_site->Automatic(this->Gadjet_P->Width);
-	}
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TPassword_magnet_F::DBGridTitleClick(TColumn *Column)
 {
@@ -352,6 +350,31 @@ Password_magnet_F->password_SQL_site->Sort_field_run(Column->FieldName);
    this->password_Resize_site->Add(this->Home_telephone_DBE);
    this->password_Resize_site->Add(this->Mobile_telephone_DBE);
  };
+
+// void TPassword_magnet_F::Password_magnet_F_RESIZE()
+//{
+//  const int diffences = 35;
+//
+//  int Form_width      = Password_magnet_F->Width;
+//  int Navigator_width = this->Navigator_P->Width;
+//  int result          = 0;
+//
+//  result = Form_width - Navigator_width;
+//  this->Date_navigator_P->Width = result;
+//
+//
+//  result = result / 2;
+//  this->Gadjet_P->Width = result-diffences;
+//  this->Person_P->Width = result+(diffences-25);
+//
+//  int Form_height = (Password_magnet_F->Height - (this->ToolBar->Height + this->DBGrid_P->Height
+//					 + this->DBNavigator->Width + this->StatusBar->Height));
+//
+// // this->Date_navigator_P->Height = Form_height;
+//  this->Gadjet_P->Height         = Form_height;
+//  this->Person_P->Height         = Form_height;
+//};
+
 
 
 

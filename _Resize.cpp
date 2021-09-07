@@ -7,17 +7,18 @@ _Resize::_Resize()
   this->min_width = 0;
   this->max_width = 0;
   this->active    = false;
-  this->object    = std::make_unique<std::vector<TDBEdit*>>();
+  this->object_dbedit    = std::make_unique<std::vector<TDBEdit*>>();
 };
 
 //---------------------------Constructor- 2 ------------------------------------
-_Resize::_Resize(const int& min_width, const int& max_width, const int& value)
+_Resize::_Resize(const int& min_width, const int& max_width, const int& value, TPanel* object_panel)
 {
-  this->min_width   = min_width;
-  this->max_width   = max_width;
-  this->min_width_P = value;
-  this->active      = false;
-  this->object      = std::make_unique<std::vector<TDBEdit*>>();
+  this->min_width     = min_width;
+  this->max_width     = max_width;
+  this->min_width_P   = value;
+  this->active        = false;
+  this->object_panel  = object_panel;
+  this->object_dbedit      = std::make_unique<std::vector<TDBEdit*>>();
 };
 
 //---------------------------Destructor---------------------------------------
@@ -29,19 +30,21 @@ _Resize::~_Resize()
 //------------------------------------------------------------------------------
 void _Resize::Add(TDBEdit* obj)
 {
-    this->object->push_back(obj);
+	this->object_dbedit->push_back(obj);
 };
 
 //------------------------------------------------------------------------------
 void _Resize::Clear()
 {
 
-   for (auto i = this->object->begin(); i != this->object->end(); i++)
+   for (auto i = this->object_dbedit->begin(); i != this->object_dbedit->end(); i++)
    {
 	 *i = 0;
    };
 
-   this->object->clear();
+   this->object_panel = 0;
+   delete this->object_panel;
+   this->object_dbedit->clear();
 };
 
 //------------------------------------------------------------------------------
@@ -76,11 +79,11 @@ void _Resize::Automatic(const int& Panel_width)
 int width, width_plus, temp;
 width = 0;
 
-   temp  = Panel_width;
+   temp  = Panel_width - 230;
 //   temp  = Panel_width - this->min_width_P;
-   width_plus = this->min_width + temp;
+   width_plus = temp;
 
-  if ((this->max_width > width_plus) and (this->min_width <= width_plus))
+  if ((this->max_width >= width_plus) and (this->min_width <= width_plus))
   {
    width = width_plus;
   };
@@ -90,7 +93,7 @@ width = 0;
    width = this->min_width;
   };
 
-  if (this->min_width < width_plus) {
+  if (this->max_width < width_plus) {
    width = this->max_width;
   }
 
@@ -114,7 +117,7 @@ bool _Resize::get_active()
 //------------------------------------------------------------------------------
 void _Resize::Automatic_inside(const int& width)
 {
-  for (auto i = this->object->begin(); i != this->object->end(); i++)
+  for (auto i = this->object_dbedit->begin(); i != this->object_dbedit->end(); i++)
   {
    (*i)->Width = width;
   };

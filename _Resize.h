@@ -8,7 +8,7 @@ class _Resize
 {
 public:
 	_Resize();
-    _Resize(const int& min_width, const int& max_width, const int& value);
+    _Resize(const int& min_width, const int& max_width, const int& value, TPanel* object_panel);
 	~_Resize();
 	void Add(TDBEdit* obj);
 	void Clear();
@@ -21,8 +21,9 @@ public:
     bool get_active();
 
 private:
-   std::unique_ptr<std::vector<TDBEdit*>> object;
+   std::unique_ptr<std::vector<TDBEdit*>> object_dbedit;
 
+   TPanel*        object_panel;
    int            min_width;
    int            max_width;
    int            min_width_P;
