@@ -46,6 +46,11 @@ void Add_columns_r::clear_item()
 {
   int count = this->Grid->Columns->Count;
 
+  if (count<1)
+  {
+   return;
+  }
+
   for (int i = count; i > 0; i--)
   {
    this->Grid->Columns->Delete((count-1));

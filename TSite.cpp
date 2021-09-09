@@ -8,7 +8,6 @@
  TSite::TSite()
  {
 	this->Active_object             = true;
-	this->Active_object_columns_run = false;
 	this->columns       = std::make_unique<Add_columns_r>();
  };
 
@@ -163,7 +162,18 @@ void TSite::set_Active_object(const bool& set)
   this->Active_object = set;
 };
 
-
+void TSite::this_active(const bool& value)
+{
+   if (value == true)
+   {
+	this->Active_object = value;
+   }
+   else
+   {
+	this->null_all_object_point();
+	this->Active_object = false;
+   };
+};
 //------------------------------------------------------------------------------
 //-----------------------GET--------------------------------------------------//
 //------------------------------------------------------------------------------
@@ -184,14 +194,6 @@ void TSite::set_Active_object(const bool& set)
 	}
  };
 
-
-
-//------------------------------------------------------------------------------
-bool TSite::get_Active_object_columns_run()
-{
-  return this->Active_object_columns_run;
-};
-
 //------------------------------------------------------------------------------
 bool TSite::get_selected_all_object()
 {
@@ -201,6 +203,7 @@ bool TSite::get_selected_all_object()
 		 or (this->Place_of_birth_DBE == 0) or (this->Country_DBE == 0) or (this->City_DBE == 0) or (this->Address_registration_DBE == 0)
 		 or (this->Place_of_resindece_DBE == 0) or (this->Home_telephone_DBE == 0) or (this->Mobile_telephone_DBE == 0))
 	  {
+
 		 return false;
 	  }
 	  else
@@ -254,7 +257,6 @@ void TSite::null_all_object_point()
 	this->Mobile_telephone_DBE                  = 0;
 
 	this->Active_object                         = false;
-	this->Active_object_columns_run             = false;
 };
 
 //------------------------------------------------------------------------------
@@ -268,7 +270,6 @@ void TSite::columns_run()
   this->columns->new_col("Password", "Пароль", 200);
   this->columns->new_col("Mail", "Электронная почта", 200);
   this->columns->new_col("Registration_date", "Дата регистрации", 150);
-
   this->columns->new_col("First_name", "Фамилия", 150);
   this->columns->new_col("Last_name", "Имя", 150);
   this->columns->new_col("Year_of_birth", "Место рождения", 150);
@@ -280,9 +281,56 @@ void TSite::columns_run()
   this->columns->new_col("Place_of_resindece", "Место жительство", 350);
   this->columns->new_col("Home_telephone", "№ Домашнего тел", 150);
   this->columns->new_col("Mobile_telephone", "№ Мобильного", 150);
-  this->Active_object_columns_run      = true;
   this->Selected_field();
+}
+
+
+void TSite::Language_rus()
+{
+  this->columns->edit_col(0, "ID", "ИД", 100);
+  this->columns->edit_col(1, "Host", "Имя сайта", 250);
+  this->columns->edit_col(2, "Login", "Логин", 200);
+  this->columns->edit_col(3, "Password", "Пароль", 200);
+  this->columns->edit_col(4, "Mail", "Электронная почта", 200);
+  this->columns->edit_col(5, "Registration_date", "Дата регистрации", 150);
+  this->columns->edit_col(6, "First_name", "Фамилия", 150);
+  this->columns->edit_col(7, "Last_name", "Имя", 150);
+  this->columns->edit_col(8, "Year_of_birth", "Место рождения", 150);
+  this->columns->edit_col(9, "Gender_of_person", "Пол", 100);
+  this->columns->edit_col(10, "Place_of_birth", "Год рождения", 150);
+  this->columns->edit_col(11, "Country", "Страна", 150);
+  this->columns->edit_col(12, "City", "Город", 150);
+  this->columns->edit_col(13, "Address_registration", "Место прописки", 350);
+  this->columns->edit_col(14, "Place_of_resindece", "Место жительство", 350);
+  this->columns->edit_col(15, "Home_telephone", "№ Домашнего тел", 150);
+  this->columns->edit_col(16, "Mobile_telephone", "№ Мобильного", 150);
 };
+
+
+//------------------------------------------------------------------------------
+void TSite::Language_eng()
+{
+  this->columns->edit_col(0, "ID", "ID", 100);
+  this->columns->edit_col(1, "Host", "Host name", 250);
+  this->columns->edit_col(2, "Login", "Login", 200);
+  this->columns->edit_col(3, "Password", "Password", 200);
+  this->columns->edit_col(4, "Mail", "Mail", 200);
+  this->columns->edit_col(5, "Registration_date", "Registration date", 150);
+  this->columns->edit_col(6, "First_name", "Firstname", 150);
+  this->columns->edit_col(7, "Last_name", "Lastname", 150);
+  this->columns->edit_col(8, "Year_of_birth", "Year of birth", 150);
+  this->columns->edit_col(9, "Gender_of_person", "Gender of person", 100);
+  this->columns->edit_col(10, "Place_of_birth", "Place of birth", 150);
+  this->columns->edit_col(11, "Country", "Country", 150);
+  this->columns->edit_col(12, "City", "City", 150);
+  this->columns->edit_col(13, "Address_registration", "Address registration", 350);
+  this->columns->edit_col(14, "Place_of_resindece", "Place of resindece", 350);
+  this->columns->edit_col(15, "Home_telephone", "Home telephone №", 150);
+  this->columns->edit_col(16, "Mobile_telephone", "Mobile telephone №", 150);
+};
+
+//------------------------------------------------------------------------------
+
 
 //                             PRIVATE SECTION
 //*************************************************************************--//
@@ -309,12 +357,5 @@ void TSite::Selected_field()
 	this->Mobile_telephone_DBE->DataField       = "Mobile_telephone";
 };
 
-void new_position()
-{
+//------------------------------------------------------------------------------
 
-};
-
-void old_position()
-{
-
-};

@@ -27,7 +27,7 @@ public:
 	 bool get_Paycard_BOOL();
 	 bool get_Docfile_BOOL();
 
-
+     int  get_id_object(const AnsiString& name_object) noexcept;
 private:
 	 TLabel* Site_NL;
 	 TLabel* Mail_NL;
@@ -50,7 +50,7 @@ private:
 	 bool Paycard_BOOL;
 	 bool Docfile_BOOL;
 
-	 int  get_id_object(const AnsiString& name_object) noexcept;
+
 	 void get_id_object_inside(const int& set);
 	 void get_id_object_inside_2(const int& set);
      void get_id_object_inside_3(const int& set);

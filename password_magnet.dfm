@@ -59,7 +59,7 @@ object Password_magnet_F: TPassword_magnet_F
     Align = alLeft
     TabOrder = 2
     object Site_NL: TLabel
-      Left = 15
+      Left = 7
       Top = 15
       Width = 28
       Height = 21
@@ -74,7 +74,7 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = Site_NLClick
     end
     object Mobile_NL: TLabel
-      Left = 15
+      Left = 7
       Top = 90
       Width = 52
       Height = 21
@@ -89,7 +89,7 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = Mobile_NLClick
     end
     object Computer_NL: TLabel
-      Left = 15
+      Left = 7
       Top = 195
       Width = 75
       Height = 21
@@ -104,7 +104,7 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = Computer_NLClick
     end
     object ICloud_NL: TLabel
-      Left = 15
+      Left = 7
       Top = 125
       Width = 52
       Height = 21
@@ -119,7 +119,7 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = ICloud_NLClick
     end
     object PlayMarket_NL: TLabel
-      Left = 15
+      Left = 7
       Top = 160
       Width = 84
       Height = 21
@@ -134,7 +134,7 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = PlayMarket_NLClick
     end
     object Paycard_NL: TLabel
-      Left = 15
+      Left = 7
       Top = 230
       Width = 61
       Height = 21
@@ -149,7 +149,7 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = Paycard_NLClick
     end
     object Mail_NL: TLabel
-      Left = 15
+      Left = 7
       Top = 55
       Width = 32
       Height = 21
@@ -164,8 +164,8 @@ object Password_magnet_F: TPassword_magnet_F
       OnClick = Mail_NLClick
     end
     object Docfile_NL: TLabel
-      Left = 15
-      Top = 265
+      Left = 7
+      Top = 266
       Width = 54
       Height = 21
       Cursor = crHandPoint
@@ -261,42 +261,42 @@ object Password_magnet_F: TPassword_magnet_F
             BorderStyle = bsSingle
             TabOrder = 0
             object ID_L: TLabel
-              Left = 15
+              Left = 7
               Top = 20
               Width = 33
               Height = 21
               Caption = '* ID'
             end
             object Login_L: TLabel
-              Left = 15
+              Left = 7
               Top = 90
               Width = 57
               Height = 21
               Caption = '* Login'
             end
             object Password_L: TLabel
-              Left = 15
+              Left = 7
               Top = 125
               Width = 88
               Height = 21
               Caption = '* Password'
             end
             object Mail_L: TLabel
-              Left = 15
+              Left = 7
               Top = 160
               Width = 46
               Height = 21
               Caption = '* Mail'
             end
             object Registration_date_L: TLabel
-              Left = 15
+              Left = 7
               Top = 195
               Width = 139
               Height = 21
               Caption = '* Registration date'
             end
             object Host_L: TLabel
-              Left = 15
+              Left = 7
               Top = 55
               Width = 71
               Height = 21
@@ -361,14 +361,14 @@ object Password_magnet_F: TPassword_magnet_F
             BorderStyle = bsSingle
             TabOrder = 1
             object First_name_L: TLabel
-              Left = 20
+              Left = 7
               Top = 20
               Width = 73
               Height = 21
               Caption = 'Firstname'
             end
             object Last_name_L: TLabel
-              Left = 20
+              Left = 7
               Top = 55
               Width = 71
               Height = 21
@@ -376,63 +376,63 @@ object Password_magnet_F: TPassword_magnet_F
               Caption = 'Lastname'
             end
             object Year_of_birth_L: TLabel
-              Left = 20
+              Left = 7
               Top = 90
               Width = 93
               Height = 21
               Caption = 'Year of birth'
             end
             object Gender_of_person_L: TLabel
-              Left = 20
+              Left = 7
               Top = 125
               Width = 132
               Height = 21
               Caption = 'Gender of person'
             end
             object Place_of_birth_L: TLabel
-              Left = 20
+              Left = 7
               Top = 160
               Width = 100
               Height = 21
               Caption = 'Place of birth'
             end
             object Country_L: TLabel
-              Left = 20
+              Left = 7
               Top = 195
               Width = 61
               Height = 21
               Caption = 'Country'
             end
             object City_L: TLabel
-              Left = 20
+              Left = 7
               Top = 230
               Width = 31
               Height = 21
               Caption = 'City'
             end
-            object Andress_registration_L: TLabel
-              Left = 20
+            object Address_registration_L: TLabel
+              Left = 7
               Top = 265
-              Width = 149
+              Width = 150
               Height = 21
-              Caption = 'Andress registration'
+              Caption = 'Address registration'
             end
             object Place_of_resindece_L: TLabel
-              Left = 20
+              Left = 7
               Top = 300
               Width = 136
               Height = 21
               Caption = 'Place of resindece'
             end
             object Home_telephone_L: TLabel
-              Left = 20
+              Left = 7
               Top = 335
               Width = 121
               Height = 21
               Caption = 'Home telephone'
             end
             object Mobile_telephone_L: TLabel
-              Left = 20
+              Left = 7
               Top = 370
               Width = 128
               Height = 21
@@ -542,6 +542,7 @@ object Password_magnet_F: TPassword_magnet_F
               Height = 33
               Caption = 'Button2'
               TabOrder = 12
+              OnClick = Button2Click
             end
           end
         end
@@ -579,17 +580,34 @@ object Password_magnet_F: TPassword_magnet_F
   object MainMenu1: TMainMenu
     Left = 624
     Top = 168
-    object File1: TMenuItem
+    object File_M: TMenuItem
       Caption = 'File'
-      object Open1: TMenuItem
+      object Open_M: TMenuItem
         Caption = '&Open'
       end
       object N1: TMenuItem
         Caption = '-'
       end
-      object Exit1: TMenuItem
+      object Exit_M: TMenuItem
         Caption = 'Exit'
-        OnClick = Exit1Click
+        OnClick = Exit_MClick
+      end
+    end
+    object Window_M: TMenuItem
+      Caption = 'Window'
+      object Language_M: TMenuItem
+        Caption = 'Language'
+        object Russian_M: TMenuItem
+          Caption = 'Russian'
+          OnClick = Russian_MClick
+        end
+        object English1: TMenuItem
+          Caption = '-'
+        end
+        object English_M: TMenuItem
+          Caption = 'English'
+          OnClick = English_MClick
+        end
       end
     end
   end

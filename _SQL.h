@@ -23,7 +23,10 @@ public:
 		//touple: 0 = Field name(AnsiString); 1 = First value(AnsiString); 2 = Last value(AnsiString);
 		// 3 = First Field(bool); 4 = the sorting will be based on this field(bool true == BY ORDER ASC);
 
-		void Set_Sort_field(const bool& Sort_up);
+		void set_Sort_field(const bool& Sort_up);
+
+		void set_Active(const bool& value);
+		bool get_Active();
 
 		void Order_general();
 
@@ -31,6 +34,7 @@ public:
 
 		void Sort_field_run(const AnsiString& Field);
 
+        bool Field_not_null();
 
 private:
 //Varrible
@@ -40,6 +44,7 @@ private:
 		AnsiString               								Sort_field;
 		bool                     								Sort_up;
 		AnsiString               								_SQL_command;
+		bool                                                    Active;
 
 		std::unique_ptr<std::vector<AnsiString>>                Temp_last_sql;
 

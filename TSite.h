@@ -11,7 +11,6 @@
 class TSite
 {
   public:
-//		 TSite() = delete;
 		 TSite();
 		~TSite();
 
@@ -41,16 +40,13 @@ class TSite
 
 		 AnsiString    get_path_name();
 		 bool          get_Active_object();
-		 bool          get_Active_object_columns_run();
          bool          get_selected_all_object();
 
 		 void          null_all_object_point();
 		 void          columns_run();
-
-		 void          new_position();
-		 void          old_position();
-
-//		 AnsiString    get_Host();
+		 void          Language_rus();
+		 void          Language_eng();
+		 void          this_active(const bool& value);
 
  protected:
 
@@ -81,11 +77,12 @@ class TSite
 		const AnsiString Path_name = "TSite";
 
 		bool           Active_object;
-		bool           Active_object_columns_run;
 
 		std::unique_ptr<Add_columns_r> columns;
 
 		void           Selected_field();
+
+
 
 
 };

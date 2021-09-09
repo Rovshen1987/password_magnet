@@ -33,10 +33,10 @@ __published:	// IDE-managed Components
 	TMainMenu *MainMenu1;
 	TToolBar *ToolBar;
 	TStatusBar *StatusBar;
-	TMenuItem *File1;
-	TMenuItem *Open1;
+	TMenuItem *File_M;
+	TMenuItem *Open_M;
 	TMenuItem *N1;
-	TMenuItem *Exit1;
+	TMenuItem *Exit_M;
 	TPanel *Navigator_P;
 	TSplitter *Splitter1;
 	TSplitter *Splitter3;
@@ -88,7 +88,7 @@ __published:	// IDE-managed Components
 	TLabel *Place_of_birth_L;
 	TLabel *Country_L;
 	TLabel *City_L;
-	TLabel *Andress_registration_L;
+	TLabel *Address_registration_L;
 	TLabel *Place_of_resindece_L;
 	TLabel *Home_telephone_L;
 	TLabel *Mobile_telephone_L;
@@ -105,6 +105,11 @@ __published:	// IDE-managed Components
 	TDBEdit *Mobile_telephone_DBE;
 	TButton *Button1;
 	TButton *Button2;
+	TMenuItem *Window_M;
+	TMenuItem *Language_M;
+	TMenuItem *Russian_M;
+	TMenuItem *English1;
+	TMenuItem *English_M;
 	void __fastcall EditCopy1Execute(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -115,11 +120,14 @@ __published:	// IDE-managed Components
 	void __fastcall Computer_NLClick(TObject *Sender);
 	void __fastcall Paycard_NLClick(TObject *Sender);
 	void __fastcall FormResize(TObject *Sender);
-	void __fastcall Exit1Click(TObject *Sender);
+	void __fastcall Exit_MClick(TObject *Sender);
 	void __fastcall Mail_NLClick(TObject *Sender);
 	void __fastcall Docfile_NLClick(TObject *Sender);
 	void __fastcall DBGridColEnter(TObject *Sender);
 	void __fastcall DBGridTitleClick(TColumn *Column);
+	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall English_MClick(TObject *Sender);
+	void __fastcall Russian_MClick(TObject *Sender);
 
 private:	// User declarations
 	void initilisation();
@@ -128,6 +136,7 @@ private:	// User declarations
 	void Site_NL_initilisation();
 	void Site_SQL_initilisation();
 	void Site_Resize_initilisation();
+
 	void Mail_NL_initilisation();
 	void Mobile_NL_initilisation();
 	void ICloud_NL_initilisation();
@@ -136,15 +145,22 @@ private:	// User declarations
 	void Paycard_NL_initilisation();
 	void Docfile_NL_initilisation();
 
+	void Language_rus();
+	void Language_eng();
 
+	void Switching(const AnsiString& value);
+    void All_object_power_off();
+
+	AnsiString         Language_active;
 
 public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);
 														  //columns_run
 	std::unique_ptr<Navigator> password_magnet_navigator;
+
 	std::unique_ptr<TSite>     password_magnet_site;
 	std::unique_ptr<_SQL>      password_SQL_site;
-    std::unique_ptr<_Resize>   password_Resize_site;
+	std::unique_ptr<_Resize>   password_Resize_site;
 
 
 
@@ -152,8 +168,9 @@ public:		// User declarations
 	void visible_TSh(TTabSheet* object);
 
 
-
-
+	void Reaname_obj(TLabel* obj,    const AnsiString& caption);
+	void Reaname_obj(TMenuItem* obj, const AnsiString& caption);
+    void Reaname_obj(TTabSheet* obj, const AnsiString& caption);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TPassword_magnet_F *Password_magnet_F;

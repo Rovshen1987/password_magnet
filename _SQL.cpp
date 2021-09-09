@@ -9,6 +9,7 @@ _SQL::_SQL(TADOQuery* ADOQuery, const AnsiString& Table_name, const bool& Sort_u
 	this->ADOQuery        = ADOQuery;
 	this->Table_name      = Table_name;
 	this->Sort_up         = Sort_up;
+	this->Active          = true;
 	this->_SQL_command    = "";
 
 
@@ -127,25 +128,49 @@ void _SQL::Add(const std::tuple<AnsiString, TDate, TDate, bool, bool>& value)
 };
 
 //------------------------------------------------------------------------------
-void _SQL::Set_Sort_field(const bool& Sort_up)
+void _SQL::set_Sort_field(const bool& Sort_up)
 {
    this->Sort_up  = Sort_up;
+};
+
+bool _SQL::Field_not_null()
+{
+	 if (this->Field->empty() == true)
+	 {
+	  return false;
+	 }
+	 else
+	 {
+	  return true;
+	 }
 };
 
 //------------------------------------------------------------------------------
 void _SQL::Order_general()
 {
-  this->order_part_one();
-  this->order_part_ORDER_BY();
-  this->Sql_text_rewrite();
+ if (this->Active == true)
+ {
+   this->order_part_one();
+   this->order_part_ORDER_BY();
+   this->Sql_text_rewrite();	 
+ }
 
+   AnsiString temp = "";
+
+   for (auto i = this->Temp_last_sql->begin(); i != this->Temp_last_sql->end(); i++)
+   {
+	temp+= *i;
+   };
+   
 };
 
+//------------------------------------------------------------------------------
 void _SQL::Order_clear()
 {
   this->Temp_last_sql->clear();
 };
 
+//------------------------------------------------------------------------------
 void _SQL::Sort_field_run(const AnsiString& Field)
 {
    if (this->Sort_field == Field)
@@ -158,9 +183,30 @@ void _SQL::Sort_field_run(const AnsiString& Field)
 	this->Sort_up    = true;
    };
 
+   if (this->Sort_field != "")
+   {
    this->Temp_last_sql->pop_back();
+   }
+
    this->order_part_ORDER_BY();
    this->Sql_text_rewrite();
+};
+
+//------------------------------------------------------------------------------
+void _SQL::set_Active(const bool& value)
+{
+  if (value != true)
+  {
+   this->Order_clear();
+  }
+
+  this->Active = value;
+};
+
+//------------------------------------------------------------------------------
+bool _SQL::get_Active()
+{
+   return this->Active;
 };
 						   //PRIVATE Section
 //------------------------------------------------------------------------------
@@ -242,7 +288,14 @@ void _SQL::order_part_ORDER_BY()
 {
   AnsiString sort = (this->Sort_up == true)?" ASC ":" DESC ";
 
+ if (this->Sort_field==AnsiString(""))
+ {
+  this->Temp_last_sql->push_back(AnsiString("  "));
+ } 
+ else
+ {
  this->Temp_last_sql->push_back(AnsiString(" ORDER BY "+ this->Sort_field + sort));
+ }
 };
 
 //-----------------------------------------------------------------------------
