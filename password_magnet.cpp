@@ -39,12 +39,16 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
 
 
 
-   this->password_magnet_navigator   = std::make_unique<Navigator>();
+   this->password_magnet_navigator                    = std::make_unique<Navigator>();
 
-   this->password_magnet_site        = std::make_unique<TSite>();
-   this->password_SQL_site           = std::make_unique<_SQL>(ADOQuery_site, "TSite", true);
-   this->password_Resize_site        = std::make_unique<_Resize>(220, 440, 230, this->Gadjet_P);
+   this->password_magnet_site                         = std::make_unique<TSite>();
+   this->password_magnet_SQL_site                     = std::make_unique<_SQL>(ADOQuery_site, "TSite", true);
+   this->password_magnet_Resize_site                  = std::make_unique<_Resize>(220, 440, 230, this->Gadjet_P);
+   this->password_magnet_Active_database_and_Language = std::make_unique<_Active_database_and_Language>(AnsiString("RUS"));
 
+
+
+   this->password_magnet_Active_database_and_Language->set_Site(true);
 
 
    this->Site_TSh->TabVisible  = false;
@@ -64,9 +68,13 @@ void __fastcall TPassword_magnet_F::Button1Click(TObject *Sender)
    this->password_magnet_navigator->object_click(this->Site_NL->GetNamePath());
    this->Site_NL_initilisation();
    //this->Language_rus();
+   this->password_magnet_Active_database_and_Language->set_Site(true);
+   this->Language_click();
 
-   Password_magnet_F->Height = Password_magnet_F->Constraints->MinHeight;
-   Password_magnet_F->Width = Password_magnet_F->Constraints->MinWidth;
+//   Password_magnet_F->Height = Password_magnet_F->Constraints->MinHeight;
+   Password_magnet_F->Width  = Password_magnet_F->Constraints->MinWidth;
+
+
  };
 
 
@@ -87,6 +95,7 @@ this->visible_TSh(this->Site_TSh);
 
 void __fastcall TPassword_magnet_F::Mobile_NLClick(TObject *Sender)
 {
+this->Switching(this->Mobile_NL->GetNamePath());
 this->password_magnet_navigator->object_click(this->Mobile_NL->GetNamePath());
 this->visible_TSh(this->Mobile_TSh);
 }
@@ -154,7 +163,7 @@ void __fastcall TPassword_magnet_F::FormResize(TObject *Sender)
   int pwidth = 0;
   pwidth = (fwidth-153)/2;
   Gadjet_P->Width = pwidth;
-  password_Resize_site->Automatic(pwidth);
+  password_magnet_Resize_site->Automatic(pwidth);
   };
 
 
@@ -196,8 +205,10 @@ if ((this->password_magnet_site->get_Active_object() == true) and
    this->password_magnet_site->set_Mobile_telephone_DBE(this->Mobile_telephone_DBE);
    this->Site_SQL_initilisation();
    this->Site_Resize_initilisation();
-   this->password_Resize_site->Connect();
+   this->password_magnet_Resize_site->Connect();
    this->password_magnet_site->columns_run();
+   Password_magnet_F->Constraints->MinHeight = 845;
+   Password_magnet_F->Height = 845;
   };
 
 
@@ -290,30 +301,30 @@ Password_magnet_F->Caption = "Delta";
 
 void __fastcall TPassword_magnet_F::DBGridTitleClick(TColumn *Column)
 {
-Password_magnet_F->password_SQL_site->Sort_field_run(Column->FieldName);
+Password_magnet_F->password_magnet_SQL_site->Sort_field_run(Column->FieldName);
 }
 //---------------------------------------------------------------------------
  void TPassword_magnet_F::Site_SQL_initilisation()
  {
-	if (this->password_SQL_site->Field_not_null() == false)
+	if (this->password_magnet_SQL_site->Field_not_null() == false)
   {
-   this->password_SQL_site->Add("ID");
-   this->password_SQL_site->Add("Host");
-   this->password_SQL_site->Add("Login");
-   this->password_SQL_site->Add("Password");
-   this->password_SQL_site->Add("Mail");
-   this->password_SQL_site->Add("Registration_date");
-   this->password_SQL_site->Add("First_name");
-   this->password_SQL_site->Add("Last_name");
-   this->password_SQL_site->Add("Year_of_birth");
-   this->password_SQL_site->Add("Gender_of_person");
-   this->password_SQL_site->Add("Place_of_birth");
-   this->password_SQL_site->Add("Country");
-   this->password_SQL_site->Add("City");
-   this->password_SQL_site->Add("Address_registration");
-   this->password_SQL_site->Add("Place_of_resindece");
-   this->password_SQL_site->Add("Home_telephone");
-   this->password_SQL_site->Add("Mobile_telephone");
+   this->password_magnet_SQL_site->Add("ID");
+   this->password_magnet_SQL_site->Add("Host");
+   this->password_magnet_SQL_site->Add("Login");
+   this->password_magnet_SQL_site->Add("Password");
+   this->password_magnet_SQL_site->Add("Mail");
+   this->password_magnet_SQL_site->Add("Registration_date");
+   this->password_magnet_SQL_site->Add("First_name");
+   this->password_magnet_SQL_site->Add("Last_name");
+   this->password_magnet_SQL_site->Add("Year_of_birth");
+   this->password_magnet_SQL_site->Add("Gender_of_person");
+   this->password_magnet_SQL_site->Add("Place_of_birth");
+   this->password_magnet_SQL_site->Add("Country");
+   this->password_magnet_SQL_site->Add("City");
+   this->password_magnet_SQL_site->Add("Address_registration");
+   this->password_magnet_SQL_site->Add("Place_of_resindece");
+   this->password_magnet_SQL_site->Add("Home_telephone");
+   this->password_magnet_SQL_site->Add("Mobile_telephone");
    }
 
 //   this->password_SQL_site->Add(std::tuple<AnsiString, int, int, bool, bool>("ID",0,10,true,false));
@@ -323,49 +334,43 @@ Password_magnet_F->password_SQL_site->Sort_field_run(Column->FieldName);
 //   this->password_SQL_site->Add(std::tuple<AnsiString, AnsiString, bool, bool>("Mail","*",false,false));
 //   this->password_SQL_site->Add(std::tuple<AnsiString, TDate, TDate, bool, bool>("Registration_date",TDate("01.01.2010"),
 //								TDate("31.12.2022"),false,true));
-   this->password_SQL_site->Order_general();
+   this->password_magnet_SQL_site->Order_general();
  };
 
  void TPassword_magnet_F::Site_Resize_initilisation()
  {
-	if (this->password_Resize_site->all_point_true() == true)
+	if (this->password_magnet_Resize_site->all_point_true() == false)
 	{
-     return;
+	 return;
 	}
-   this->password_Resize_site->Add(this->ID_DBE);
-   this->password_Resize_site->Add(this->Host_DBE);
-   this->password_Resize_site->Add(this->Login_DBE);
-   this->password_Resize_site->Add(this->Password_DBE);
-   this->password_Resize_site->Add(this->Mail_DBE);
-   this->password_Resize_site->Add(this->Registration_date_DBE);
-   this->password_Resize_site->Add(this->First_name_DBE);
-   this->password_Resize_site->Add(this->Last_name_DBE);
-   this->password_Resize_site->Add(this->Year_of_birth_DBE);
-   this->password_Resize_site->Add(this->Gender_of_person_DBE);
-   this->password_Resize_site->Add(this->Place_of_birth_DBE);
-   this->password_Resize_site->Add(this->Country_DBE);
-   this->password_Resize_site->Add(this->City_DBE);
-   this->password_Resize_site->Add(this->Address_registration_DBE);
-   this->password_Resize_site->Add(this->Place_of_resindece_DBE);
-   this->password_Resize_site->Add(this->Home_telephone_DBE);
-   this->password_Resize_site->Add(this->Mobile_telephone_DBE);
+   this->password_magnet_Resize_site->Add(this->ID_DBE);
+   this->password_magnet_Resize_site->Add(this->Host_DBE);
+   this->password_magnet_Resize_site->Add(this->Login_DBE);
+   this->password_magnet_Resize_site->Add(this->Password_DBE);
+   this->password_magnet_Resize_site->Add(this->Mail_DBE);
+   this->password_magnet_Resize_site->Add(this->Registration_date_DBE);
+   this->password_magnet_Resize_site->Add(this->First_name_DBE);
+   this->password_magnet_Resize_site->Add(this->Last_name_DBE);
+   this->password_magnet_Resize_site->Add(this->Year_of_birth_DBE);
+   this->password_magnet_Resize_site->Add(this->Gender_of_person_DBE);
+   this->password_magnet_Resize_site->Add(this->Place_of_birth_DBE);
+   this->password_magnet_Resize_site->Add(this->Country_DBE);
+   this->password_magnet_Resize_site->Add(this->City_DBE);
+   this->password_magnet_Resize_site->Add(this->Address_registration_DBE);
+   this->password_magnet_Resize_site->Add(this->Place_of_resindece_DBE);
+   this->password_magnet_Resize_site->Add(this->Home_telephone_DBE);
+   this->password_magnet_Resize_site->Add(this->Mobile_telephone_DBE);
  };
 
 
 //------------------------------------------------------------------------------
-void __fastcall TPassword_magnet_F::Button2Click(TObject *Sender)
-{
-password_magnet_site->Language_eng();
-}
-
-//-----------------------------------------------------------------------------
 void TPassword_magnet_F::Language_rus()
 {
-  if (this->Language_active == AnsiString("rus"))
-  {
-   return;
-
-  }
+//  if (this->Language_active == AnsiString("rus"))
+//  {
+//   return;
+//
+//  }
 
 //---------------NAVIGATOR-----------------------
   this->Reaname_obj(this->Site_NL, AnsiString("Сайты"));
@@ -396,38 +401,19 @@ void TPassword_magnet_F::Language_rus()
   this->Reaname_obj(this->Russian_M, AnsiString("Русский"));
   this->Reaname_obj(this->English_M, AnsiString("Англиский"));
 
-//---------------TSite-----------------------
-  this->Reaname_obj(this->ID_L, AnsiString("* ИД"));
-  this->Reaname_obj(this->Host_L, AnsiString("* Адресс"));
-  this->Reaname_obj(this->Login_L, AnsiString("* Логин"));
-  this->Reaname_obj(this->Password_L, AnsiString("* Пароль"));
-  this->Reaname_obj(this->Mail_L, AnsiString("* Почта"));
-  this->Reaname_obj(this->Registration_date_L, AnsiString("* Дата регистрации"));
-  this->Reaname_obj(this->First_name_L, AnsiString("Фамилия"));
-  this->Reaname_obj(this->Last_name_L, AnsiString("Имя"));
-  this->Reaname_obj(this->Year_of_birth_L, AnsiString("Дата рождения"));
-  this->Reaname_obj(this->Gender_of_person_L, AnsiString("Пол"));
-  this->Reaname_obj(this->Place_of_birth_L, AnsiString("Место рождения"));
-  this->Reaname_obj(this->Country_L, AnsiString("Страна"));
-  this->Reaname_obj(this->City_L, AnsiString("Город"));
-  this->Reaname_obj(this->Address_registration_L, AnsiString("Адресс регистрации"));
-  this->Reaname_obj(this->Place_of_resindece_L, AnsiString("Место жительство"));
-  this->Reaname_obj(this->Home_telephone_L, AnsiString("Домашний телефон"));
-  this->Reaname_obj(this->Mobile_telephone_L, AnsiString("Мобильник"));
 
-  this->password_magnet_site->Language_rus();
 
-  this->Language_active = "rus";
+//  this->Language_active = "rus";
 
 };
 
 //------------------------------------------------------------------------------
 void TPassword_magnet_F::Language_eng()
 {
-  if (this->Language_active == AnsiString("eng"))
-  {
-   return;
-  }
+//  if (this->Language_active == AnsiString("eng"))
+//  {
+//   return;
+//  }
 
 //---------------NAVIGATOR-----------------------
   this->Reaname_obj(this->Site_NL, AnsiString("Sites"));
@@ -458,28 +444,8 @@ void TPassword_magnet_F::Language_eng()
   this->Reaname_obj(this->Russian_M, AnsiString("Russian"));
   this->Reaname_obj(this->English_M, AnsiString("English"));
 
-//---------------TSite-----------------------
-  this->Reaname_obj(this->ID_L, AnsiString("* ID"));
-  this->Reaname_obj(this->Host_L, AnsiString("* Host"));
-  this->Reaname_obj(this->Login_L, AnsiString("* Login"));
-  this->Reaname_obj(this->Password_L, AnsiString("* Password"));
-  this->Reaname_obj(this->Mail_L, AnsiString("* Mail"));
-  this->Reaname_obj(this->Registration_date_L, AnsiString("* Registration_date"));
-  this->Reaname_obj(this->First_name_L, AnsiString("Firstname"));
-  this->Reaname_obj(this->Last_name_L, AnsiString("Lastname"));
-  this->Reaname_obj(this->Year_of_birth_L, AnsiString("Year of birth"));
-  this->Reaname_obj(this->Gender_of_person_L, AnsiString("Gender of person"));
-  this->Reaname_obj(this->Place_of_birth_L, AnsiString("Place of birth"));
-  this->Reaname_obj(this->Country_L, AnsiString("Country"));
-  this->Reaname_obj(this->City_L, AnsiString("City"));
-  this->Reaname_obj(this->Address_registration_L, AnsiString("Address registration"));
-  this->Reaname_obj(this->Place_of_resindece_L, AnsiString("Place of resindece"));
-  this->Reaname_obj(this->Home_telephone_L, AnsiString("Home telephone"));
-  this->Reaname_obj(this->Mobile_telephone_L, AnsiString("Mobile telephone"));
 
-  this->password_magnet_site->Language_eng();
 
-  this->Language_active = "eng";
 };
 
 //------------------------------------------------------------------------------
@@ -503,16 +469,25 @@ void TPassword_magnet_F::Reaname_obj(TTabSheet* obj, const AnsiString& caption)
 //------------------------------------------------------------------------------
 void __fastcall TPassword_magnet_F::English_MClick(TObject *Sender)
 {
-this->Language_eng();
+ if (this->password_magnet_Active_database_and_Language->get_Language() != AnsiString("ENG"))
+ {
+  this->password_magnet_Active_database_and_Language->set_Language(AnsiString("ENG"));
+  this->Language_click();
+ };
 }
-//---------------------------------------------------------------------------
 
+//---------------------------------------------------------------------------
 void __fastcall TPassword_magnet_F::Russian_MClick(TObject *Sender)
 {
-this->Language_rus();
-}
-//---------------------------------------------------------------------------
+ if (this->password_magnet_Active_database_and_Language->get_Language() != AnsiString("RUS"))
+ {
+  this->password_magnet_Active_database_and_Language->set_Language(AnsiString("RUS"));
+  this->Language_click();
+ };
 
+}
+
+//---------------------------------------------------------------------------
 void TPassword_magnet_F::Switching(const AnsiString& value)
 {
   int i_NL = this->password_magnet_navigator->get_id_object(value);
@@ -521,8 +496,8 @@ void TPassword_magnet_F::Switching(const AnsiString& value)
   {
   case 1 : {
 			this->password_magnet_site->this_active(true);
-			this->password_SQL_site->set_Active(true);
-			this->password_Resize_site->Connect();
+			this->password_magnet_SQL_site->set_Active(true);
+			this->password_magnet_Resize_site->Connect();
 			this->Site_NL_initilisation();
             break;
 		   }
@@ -532,11 +507,135 @@ void TPassword_magnet_F::Switching(const AnsiString& value)
 
 };
 
+//------------------------------------------------------------------------------
 void TPassword_magnet_F::All_object_power_off()
 {
 //-------------Site---------------------------
   this->password_magnet_site->this_active(false);
-  this->password_SQL_site->set_Active(false);
-  this->password_Resize_site->Disconnect();
+  this->password_magnet_SQL_site->set_Active(false);
+  this->password_magnet_Resize_site->Disconnect();
 //*******************************************
 };
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click()
+{
+  if (password_magnet_Active_database_and_Language->get_Language() == AnsiString("RUS"))
+  {
+   this->Language_rus();
+  };
+
+  if (password_magnet_Active_database_and_Language->get_Language() == AnsiString("ENG"))
+  {
+   this->Language_eng();
+  };
+
+this->Language_click_Site();
+this->Language_click_Mial();
+this->Language_click_Mobile();
+this->Language_click_ICloud();
+this->Language_click_PlayMarket();
+this->Language_click_Computer();
+this->Language_click_Paycard();
+this->Language_click_Docfile();
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_Site()
+{
+   if (this->password_magnet_Active_database_and_Language->get_Site() == true)
+   {
+	 if (this->password_magnet_Active_database_and_Language->get_Language() == AnsiString("RUS"))
+	 {
+		//---------------TSite-----------------------
+		this->Reaname_obj(this->ID_L, AnsiString("* ИД"));
+		this->Reaname_obj(this->Host_L, AnsiString("* Адресс"));
+		this->Reaname_obj(this->Login_L, AnsiString("* Логин"));
+		this->Reaname_obj(this->Password_L, AnsiString("* Пароль"));
+		this->Reaname_obj(this->Mail_L, AnsiString("* Почта"));
+		this->Reaname_obj(this->Registration_date_L, AnsiString("* Дата регистрации"));
+		this->Reaname_obj(this->First_name_L, AnsiString("Фамилия"));
+		this->Reaname_obj(this->Last_name_L, AnsiString("Имя"));
+		this->Reaname_obj(this->Year_of_birth_L, AnsiString("Дата рождения"));
+		this->Reaname_obj(this->Gender_of_person_L, AnsiString("Пол"));
+		this->Reaname_obj(this->Place_of_birth_L, AnsiString("Место рождения"));
+		this->Reaname_obj(this->Country_L, AnsiString("Страна"));
+		this->Reaname_obj(this->City_L, AnsiString("Город"));
+		this->Reaname_obj(this->Address_registration_L, AnsiString("Адресс регистрации"));
+		this->Reaname_obj(this->Place_of_resindece_L, AnsiString("Место жительство"));
+		this->Reaname_obj(this->Home_telephone_L, AnsiString("Домашний телефон"));
+		this->Reaname_obj(this->Mobile_telephone_L, AnsiString("Мобильник"));
+
+		this->password_magnet_site->Language_rus();
+	 };
+
+	  if (this->password_magnet_Active_database_and_Language->get_Language() == AnsiString("ENG"))
+	 {
+		//---------------TSite-----------------------
+		this->Reaname_obj(this->ID_L, AnsiString("* ID"));
+		this->Reaname_obj(this->Host_L, AnsiString("* Host"));
+		this->Reaname_obj(this->Login_L, AnsiString("* Login"));
+		this->Reaname_obj(this->Password_L, AnsiString("* Password"));
+		this->Reaname_obj(this->Mail_L, AnsiString("* Mail"));
+		this->Reaname_obj(this->Registration_date_L, AnsiString("* Registration_date"));
+		this->Reaname_obj(this->First_name_L, AnsiString("Firstname"));
+		this->Reaname_obj(this->Last_name_L, AnsiString("Lastname"));
+		this->Reaname_obj(this->Year_of_birth_L, AnsiString("Year of birth"));
+		this->Reaname_obj(this->Gender_of_person_L, AnsiString("Gender of person"));
+		this->Reaname_obj(this->Place_of_birth_L, AnsiString("Place of birth"));
+		this->Reaname_obj(this->Country_L, AnsiString("Country"));
+		this->Reaname_obj(this->City_L, AnsiString("City"));
+		this->Reaname_obj(this->Address_registration_L, AnsiString("Address registration"));
+		this->Reaname_obj(this->Place_of_resindece_L, AnsiString("Place of resindece"));
+		this->Reaname_obj(this->Home_telephone_L, AnsiString("Home telephone"));
+		this->Reaname_obj(this->Mobile_telephone_L, AnsiString("Mobile telephone"));
+
+  		this->password_magnet_site->Language_eng();
+	 };
+
+   };
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_Mial()
+{
+
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_Mobile()
+{
+
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_ICloud()
+{
+
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_PlayMarket()
+{
+
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_Computer()
+{
+
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_Paycard()
+{
+
+};
+
+//------------------------------------------------------------------------------
+void TPassword_magnet_F::Language_click_Docfile()
+{
+
+};
+
+//------------------------------------------------------------------------------

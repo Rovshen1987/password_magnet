@@ -129,13 +129,13 @@ bool _Resize::get_active()
 
 bool _Resize::all_point_true()
 {
-  if ((this->object_dbedit->empty() != false) or (this->object_panel != 0))
+  if ((this->object_dbedit->empty() == true) and (this->object_panel == 0))
   {
-	return true;
+	return false;
   }
   else
   {
-	return false;
+	return true;
   }
 };
 
@@ -148,6 +148,8 @@ void _Resize::Automatic_inside(const int& width)
   {
    (*i)->Width = width;
   };
+
+  bool t = this->object_dbedit->empty();
 };
 
 //------------------------------------------------------------------------------

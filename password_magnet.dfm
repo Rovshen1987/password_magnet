@@ -542,7 +542,6 @@ object Password_magnet_F: TPassword_magnet_F
               Height = 33
               Caption = 'Button2'
               TabOrder = 12
-              OnClick = Button2Click
             end
           end
         end

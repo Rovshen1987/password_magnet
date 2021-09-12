@@ -26,6 +26,8 @@
 #include "_SQL.h"
 #include "direct_r.h"
 #include "_Resize.h"
+#include "_Active_database_and_Language.h"
+#include "Selection.h"
 //---------------------------------------------------------------------------
 class TPassword_magnet_F : public TForm
 {
@@ -125,7 +127,6 @@ __published:	// IDE-managed Components
 	void __fastcall Docfile_NLClick(TObject *Sender);
 	void __fastcall DBGridColEnter(TObject *Sender);
 	void __fastcall DBGridTitleClick(TColumn *Column);
-	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall English_MClick(TObject *Sender);
 	void __fastcall Russian_MClick(TObject *Sender);
 
@@ -149,19 +150,28 @@ private:	// User declarations
 	void Language_eng();
 
 	void Switching(const AnsiString& value);
-    void All_object_power_off();
+	void All_object_power_off();
 
-	AnsiString         Language_active;
+	void Language_click_Site();
+	void Language_click_Mial();
+	void Language_click_Mobile();
+	void Language_click_ICloud();
+	void Language_click_PlayMarket();
+	void Language_click_Computer();
+	void Language_click_Paycard();
+	void Language_click_Docfile();
+
+//	AnsiString         Language_active;
 
 public:		// User declarations
 	__fastcall TPassword_magnet_F(TComponent* Owner);
 														  //columns_run
 	std::unique_ptr<Navigator> password_magnet_navigator;
 
-	std::unique_ptr<TSite>     password_magnet_site;
-	std::unique_ptr<_SQL>      password_SQL_site;
-	std::unique_ptr<_Resize>   password_Resize_site;
-
+	std::unique_ptr<TSite>             password_magnet_site;
+	std::unique_ptr<_SQL>              password_magnet_SQL_site;
+	std::unique_ptr<_Resize>           password_magnet_Resize_site;
+	std::unique_ptr<_Active_database_and_Language>  password_magnet_Active_database_and_Language;
 
 
 
@@ -170,7 +180,9 @@ public:		// User declarations
 
 	void Reaname_obj(TLabel* obj,    const AnsiString& caption);
 	void Reaname_obj(TMenuItem* obj, const AnsiString& caption);
-    void Reaname_obj(TTabSheet* obj, const AnsiString& caption);
+	void Reaname_obj(TTabSheet* obj, const AnsiString& caption);
+
+	void Language_click();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TPassword_magnet_F *Password_magnet_F;

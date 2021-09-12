@@ -198,6 +198,7 @@ void _SQL::set_Active(const bool& value)
   if (value != true)
   {
    this->Order_clear();
+   this->ADOQuery->Active = value;
   }
 
   this->Active = value;
